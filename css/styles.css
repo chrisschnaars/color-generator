@@ -1,0 +1,324 @@
+/******************************
+CSS RESET & GlBAL SETTINGS
+******************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+	font: inherit;
+	vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******************************
+LAYOUT
+******************************/
+
+/* Global Div Styling*/
+div {
+
+}
+
+/* Full Page Container */
+/* These values are what changes via Javascript*/
+div.container {
+  background-color: white;
+  color: black;
+  height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	width: 100%;
+	min-width: 100%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+}
+
+div.shorter-flex {
+	flex: 1 1 auto;
+}
+
+div.longer-flex {
+	flex: 1 1 auto;
+}
+
+/* Header contains page title */
+header {
+  width: 100%;
+  min-width: 100%;
+  padding: 1.2rem;
+}
+
+.height-container {
+	height: 70px;
+	max-height: 70px;
+}
+
+/* Container for text logo */
+.logo-container {
+	width: 40%;
+	float: left;
+}
+
+/* Container for R,G,B display */
+/* Better way of vertically centering? Flexbox? */
+div#display {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+	margin: 0 auto;
+	height: 120px;
+	max-height: 140px;
+}
+
+/* Container for all controls*/
+/* Trying out flexbox here */
+div#controls {
+	width: 100%;
+	min-width: 100%;
+  /*position: fixed;*/
+  bottom: 0;
+	padding: 0.5rem 0;
+}
+
+/* Generic container For Each Group of controls */
+div.controls-group {
+	padding: 0 1rem;
+	float: left;
+}
+
+/* Sizing for small control groups */
+.small-group {
+	width: 25%;
+}
+
+/* Sizing for large control groups */
+.big-group {
+	width: 50%
+}
+
+/* Global align text right class */
+.align-right {
+	text-align: right;
+}
+
+/* Container for all links and buttons in control bar */
+.link-container {
+	padding: 1rem;
+	float: left;
+}
+
+.link-container:hover {
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+.float-right {
+	float: right;
+}
+
+/* Container For All Sliders */
+.sliders-group {
+	margin: 0 auto;
+	text-align: center; /* Using text align to center all sliders in div. Is this a hack? */
+}
+
+/* container for single group of slider and label */
+.slider-unit {
+	display: inline-block;
+	padding: 0 1rem;
+	text-align: left; /* resets left align*/
+}
+
+/* Styles for Control Bar LInks*/
+.unselected-link {
+
+}
+
+.selected-link {
+}
+
+/******************************
+FONT STYLING
+******************************/
+
+h1 {
+  color: inherit;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.875rem;	/*14px*/
+	letter-spacing: .05rem;
+}
+
+p {
+
+}
+
+/* global capitlization */
+.caps {
+	text-transform: uppercase;
+}
+
+/* 14pt text*/
+.smaller-text {
+	font-size: 0.875rem
+}
+
+/******************************
+MAIN DISPLAY LIST
+******************************/
+
+ul {
+    padding: 0 1rem;;
+}
+
+li {
+    width: 20%;
+    min-width: 200px;
+    display: inline;
+    font-size: 6rem;
+		font-weight: 400;
+    margin: 0 1rem;
+    color: inherit;
+    /*padding: 0 1rem;*/
+}
+
+ul.color-display {
+	position: absolute;
+	top:0;
+	width: 100%;
+	min-width: 100%;
+	text-align: center;
+}
+
+ul#rgb-display { visibility: visible; }
+ul#hex-display { visibility: hidden; }
+ul#hsl-display { visibility: hidden; }
+
+/******************************
+CONTROLS - SLIDERS
+******************************/
+
+/* RGB Color Sliders */
+
+input[type=range] {
+  vertical-align: middle;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+	color: inherit;
+	background-color: transparent;
+	-webkit-appearance: none
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	border-radius: 3px;
+	background-color: currentcolor;
+	position: relative;
+	width: .5rem;
+	height: 1.25rem;
+	cursor: pointer;
+	margin-top: -.5rem
+}
+
+/*
+input[type=range]::-webkit-slider-thumb:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -.5rem;
+    left: -.875rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    opacity: 0
+}*/
+
+input[type=range]::-moz-range-thumb {
+    width: .5rem;
+    height: 1.25rem;
+    cursor: pointer;
+		border-radius: 3px;
+    border-color: transparent;
+    border-width: 0;
+    background-color: currentcolor;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: .25rem;
+    cursor: pointer;
+		border-radius: 3px;
+    background-color: rgba(0,0,0,.25);
+}
+
+input[type=range]::-moz-range-track {
+    height: .25rem;
+    cursor: pointer;
+		border-radius: 3px;
+    background-color: rgba(0,0,0,.25)
+}
+
+/* Disable the standard blue border focus element */
+input[type=range]:focus {
+    outline: 0;
+}
+
+input[type=range]:focus::-webkit-slider-thumb {
+	outline: 0;
+	border: 0;
+	box-shadow: 0 0 1px 2px currentcolor;
+}
+
+input[type=range]:focus::-moz-range-thumb {
+	outline: 0;
+	border: 0;
+	box-shadow: 0 0 0 3px rgba(0,0,0,.25);
+}
+
+
+/******************************
+CONTROLS - SEGMENTED SELECTOR
+******************************/

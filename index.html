@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+	       <!-- Force latest available IE rendering engine and Chrome Frame (if installed) -->
+         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>Color Generator</title>
+        <meta name="description" content="Explore colors on the internet!">
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <!-- Clipboard JS -->
+        <script src="js/libs/clipboard.js-master/dist/clipboard.min.js"></script>
+
+        <!-- Google Fonts  -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+      <div class="container">
+        <!-- Page Title -->
+        <header class="shorter-flex height-container">
+          <div class="logo-container">
+            <h1>Color Generator</h1>
+          </div>
+
+        </header>
+
+        <!-- Main Display Area -->
+        <div id="display" class="longer-flex">
+            <ul class="color-display" id="rgb-display">
+                <li id="red-display"></li>
+                <li id="green-display"></li>
+                <li id="blue-display"></li>
+            </ul>
+
+            <ul class="color-display" id="hex-display">
+                <li class="caps" id="hex-value-display"></li>
+            </ul>
+
+            <ul class="color-display" id="hsl-display">
+                <li id="hue-display"></li>
+                <li id="saturation-display"></li>
+                <li id="lightness-display"></li>
+            </ul>
+
+
+        </div>
+
+        <!-- Container for all UI Controls -->
+        <div id="controls" class="shorter-flex height-container">
+
+          <div class="controls-group small-group">
+            <div id="rgb-selector" class="link-container selected-link mode-radio rgb-mode">RGB</div>
+            <div id="hex-selector" class="link-container unselected-link mode-radio hex-mode">HEX</div>
+            <div id="hsl-selector" class="link-container unselected-link mode-radio hsl-mode">HSL</div>
+          </div>
+
+            <!-- Sliders for Adjusting RGB Values -->
+          <div class="controls-group big-group">
+            <div class="sliders-group">
+
+              <div class="slider-unit">
+                <label for="red-control">Red <span id="red-slider-display"></span></label>
+                <br>
+                <input type="range" id="red-control" placeholder="Red" value="255" min="0" max="255" tabindex="0"></input>
+              </div>
+
+              <div class="slider-unit">
+                <label for="green-control">Green <span id="green-slider-display"></span></label>
+                <br>
+                <input type="range" id="green-control" placeholder="Green" value="0" min="0" max="255" tabindex="0"></input>
+              </div>
+
+              <div class="slider-unit">
+                <label for="blue-control">Blue <span id="blue-slider-display"></span></label>
+                <br>
+                <input type="range" id="blue-control" placeholder="Blue" value="255" min="0" max="255" tabindex="0"></input>
+              </div>
+            </div>
+          </div>
+
+          <div class="controls-group small-group align-right">
+            <div id="copy-css-btn" data-clipboard-text="Testtestest" class="float-right link-container unselected-link">
+              <p>Copy CSS</p>
+            </div>
+          </div>
+
+        </div>
+
+      <!-- End Page container -->
+      </div>
+
+      <!-- Javascript -->
+      <script language="javascript" type="text/javascript" src="js/main.js"></script>
+
+    </body>
+</html>

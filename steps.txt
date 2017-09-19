@@ -1,0 +1,40 @@
+JS COLOR PICKER  - v2
+A simple tool for exploring RGB color values.
+Now trying to make this without any p5js libraries - just pure javascript.
+
+
+to-do
+- array so you can go back (and forth);
+- keyboard tips? 
+
+potential add-ons:
+- use key press + dpad (i.e. hold down r and increment up and down);
+- text input??? (click on color value and change it...)
+- go back one color?
+- keyboard shortcuts for everything
+- add the input back to mode selection? not sure this is great for accessibility (or change these all to buttons)
+- the way I'm updating select/unselect is sort of a hack
+
+challenges:
+- keyCode is being deprecated. find alternatives.
+- conversion Algorithm not totally accurate
+- used flexbox to center div. set max height of display div to random number. not sure if this is the best way of implemening this.
+- radio buttons. hard to get the selection javascript right.
+
+learning:
+- controlling the DOM via javascript
+- building out different types of elements
+
+issues:
+- slider styling
+- center display div
+- another text color if neither white nor black is > 4.5
+- conversion numbers are wrong
+- cenetring of div
+
+
+idea
+- add each color to an array
+- use arrow keys to go back and forth
+- would it be better if we showed all formats, in text-entry boxes, and allowed you to change values?
+- make copying easier?
