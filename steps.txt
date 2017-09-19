@@ -4,13 +4,11 @@ Now trying to make this without any p5js libraries - just pure javascript.
 
 
 to-do
-- array so you can go back (and forth);
 - keyboard tips?
 
 potential add-ons:
 - use key press + dpad (i.e. hold down r and increment up and down);
 - text input??? (click on color value and change it...)
-- go back one color?
 - keyboard shortcuts for everything
 - add the input back to mode selection? not sure this is great for accessibility (or change these all to buttons)
 - the way I'm updating select/unselect is sort of a hack
@@ -24,6 +22,7 @@ challenges:
 learning:
 - controlling the DOM via javascript
 - building out different types of elements
+- arrays
 
 issues:
 - slider styling
@@ -38,3 +37,17 @@ idea
 - use arrow keys to go back and forth
 - would it be better if we showed all formats, in text-entry boxes, and allowed you to change values?
 - make copying easier?
+
+
+
+color array:
+- create an array variable
+- each time a color is generated, add that to the end of the array
+- if the array gets too big (20?), remove the first item
+- user can hit the back/next controls to move through the array
+- if the user moves back in the array, and generates a new color, remove all items beyond that
+
+
+move through array
+if user presses left Arrow
+- check that array is not at pos 0;

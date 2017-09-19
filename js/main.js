@@ -50,7 +50,9 @@ var cc;
 // Color Modes
 var modes = ['rgb', 'hex', 'hsl'];
 var activeMode = modes[0];
-
+// Array of Colors
+var colors = [];
+var colorsIndex = -1;	// counter for where user is in the array
 
 
 // ********************************
@@ -62,7 +64,9 @@ window.onload = function() {
 	setRandomColors();
 }
 
-// Generate random color if user hits spacebar
+// Key Press Events
+// Spacebar: Generate random color
+// Back/Next Button: Move through the color array
 window.addEventListener('keydown', function(event) {
 	// variable for key code
 	var code;
@@ -74,11 +78,23 @@ window.addEventListener('keydown', function(event) {
   } else if (event.keyCode !== undefined) {
     code = event.keyCode;
   }
-	// if user pressed spacebar, generate random colors
+	// Spacebar: Generate new colors
 	if (code == ' ' || code == 32) {
 		setRandomColors();
 	}
+
+	// Left Arrow: display previous color in array
+	if (code == 'ArrowLeft' || code == 37) {
+		displayPreviousColor();
+	}
+
+	// Right Arrow: display next color in array
+	if (code == 'ArrowRight' || code == 39) {
+		displayNextColor();
+	}
 })
+
+// Move through the array with prev/next buttons
 
 // Update color mode when user toggles selectors
 rgbSelector.addEventListener('click', function(){
@@ -110,6 +126,9 @@ function setRandomColors() {
 	r = Math.round(Math.random() * (256));
 	g = Math.round(Math.random() * (256));
 	b = Math.round(Math.random() * (256));
+
+	// add color to the Array
+	updateColorArray(r, g, b);
 
 	// Update all color styles with new color
 	updateColorStyles(r, g, b);
@@ -151,15 +170,58 @@ function updateColorStyles(r, g, b) {
 	satDisplay.innerHTML = s + ', ';
 	lightDisplay.innerHTML = l;
 
-	// Update slider positions
-	redSlider.value = r;
-	greenSlider.value = g;
-	blueSlider.value = b;
+	// Update slider positions & dpslay
+	redSlider.value = redSliderDisplay.innerHTML = r;
+	greenSlider.value = greenSliderDisplay.innerHTML = g;
+	blueSlider.value = blueSliderDisplay.innerHTML = b;
+}
 
-	// update slider display
-	redSliderDisplay.innerHTML = r;
-	greenSliderDisplay.innerHTML = g;
-	blueSliderDisplay.innerHTML = b;
+// ********************************
+// Managing the Colors Array
+// ********************************
+
+// Method to add color to array
+function updateColorArray(r, g, b) {
+		// check to see if you're not at the end of the array
+		var l = colors.length - 1;
+		// if you're in the middle of array, remove all elements beyond current index
+		if (colorsIndex < l) {
+			colors.splice(colorsIndex + 1, l - colorsIndex)
+		}
+		// remove first color in array if length exceeds 20
+		if (colors.length > 20) {
+			colors.splice(0, 1);
+		}
+		// add color to array
+		colors.push([r,g,b]);
+		colorsIndex++;
+		// console.log(colorsIndex + ' ' + r + ' ' + g + ' ' + b);
+}
+
+// Method to display previous color in array
+function displayPreviousColor() {
+	// check to see there's a previous color in array
+	if (colorsIndex > 0) {
+		// set variable for previous array position
+		var b = colorsIndex - 1;
+		// update color styles with previous color
+		updateColorStyles(colors[b][0], colors[b][1], colors[b][2]);
+		// reduce global index
+		colorsIndex--;
+	}
+}
+
+// Method to display previous color in array
+function displayNextColor() {
+	// check to see there's a previous color in array
+	if (colorsIndex < colors.length - 1) {
+		// set variable for previous array position
+		var b = colorsIndex + 1;
+		// update color styles with previous color
+		updateColorStyles(colors[b][0], colors[b][1], colors[b][2]);
+		// reduce global index
+		colorsIndex++;
+	}
 }
 
 
