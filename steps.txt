@@ -1,53 +1,39 @@
-JS COLOR PICKER  - v2
-A simple tool for exploring RGB color values.
-Now trying to make this without any p5js libraries - just pure javascript.
+COLOR GENERATOR
+A simple tool for finding colors.
 
-
-to-do
+To Do:
 - keyboard tips?
 
-potential add-ons:
-- use key press + dpad (i.e. hold down r and increment up and down);
-- text input??? (click on color value and change it...)
-- keyboard shortcuts for everything
-- add the input back to mode selection? not sure this is great for accessibility (or change these all to buttons)
-- the way I'm updating select/unselect is sort of a hack
+Potential Features
+- Text input of color values? (click on color value and change it...)
 
-challenges:
+Fixes Needed:
+- Add the input back to mode selection? Not sure this is great for accessibility (or change these all to buttons)
+- The way I'm updating select/unselect is sort of a hack..
+
+Challenges Along the Way:
 - keyCode is being deprecated. find alternatives.
-- conversion Algorithm not totally accurate
-- used flexbox to center div. set max height of display div to random number. not sure if this is the best way of implemening this.
+- conversion algorithm not totally accurate
+- used flexbox to center div. set max height of display div to random number. not sure if this is the best way of implementing this.
 - radio buttons. hard to get the selection javascript right.
 
-learning:
+Learned:
 - controlling the DOM via javascript
 - building out different types of elements
 - arrays
+- handling basic libraries
 
-issues:
+Issues
 - slider styling
 - center display div
 - another text color if neither white nor black is > 4.5
 - conversion numbers are wrong
-- cenetring of div
-
-
-idea
-- add each color to an array
-- use arrow keys to go back and forth
-- would it be better if we showed all formats, in text-entry boxes, and allowed you to change values?
-- make copying easier?
+- centering of div
 
 
 
-color array:
-- create an array variable
-- each time a color is generated, add that to the end of the array
-- if the array gets too big (20?), remove the first item
-- user can hit the back/next controls to move through the array
-- if the user moves back in the array, and generates a new color, remove all items beyond that
-
-
-move through array
-if user presses left Arrow
-- check that array is not at pos 0;
+tips:
+- show initial space bar tip
+- if user hits the spacebar, fade that tip out and fade the keyboard controls tip in
+  if (spacebardUsed = true)
+  if (keyboardUsed)

@@ -53,7 +53,12 @@ var activeMode = modes[0];
 // Array of Colors
 var colors = [];
 var colorsIndex = -1;	// counter for where user is in the array
-
+// Onboarding Hints
+// Each variable indicates whether keu has been used or not
+var spacebarUsed = false;
+var leftkeyUsed = false;
+var rightkeyUsed = false;
+var onboardStep = 0;
 
 // ********************************
 // EVENT LISTENERS
@@ -62,6 +67,7 @@ var colorsIndex = -1;	// counter for where user is in the array
 // Generate initial random color on load
 window.onload = function() {
 	setRandomColors();
+	setTimeout(onboarding(), 1000);
 }
 
 // Key Press Events
@@ -80,17 +86,32 @@ window.addEventListener('keydown', function(event) {
   }
 	// Spacebar: Generate new colors
 	if (code == ' ' || code == 32) {
+		// set random color with spacebar
 		setRandomColors();
+		// set the spacebar variable to true to hide onboarding hint
+		if (!spacebarUsed && onboardStep === 1) {
+			onboarding();
+		}
 	}
 
 	// Left Arrow: display previous color in array
 	if (code == 'ArrowLeft' || code == 37) {
+		// display the previous color in the array
 		displayPreviousColor();
+		// set the left key variable to true to hide onboarding hint
+		if (!leftkeyUsed && onboardStep === 2) {
+			onboarding();
+		}
 	}
 
 	// Right Arrow: display next color in array
 	if (code == 'ArrowRight' || code == 39) {
+		// display the next color in the array
 		displayNextColor();
+		// set the right key variable to true to hide onboarding hint
+		if (!rightkeyUsed && onboardStep === 3) {
+			onboarding();
+		}
 	}
 })
 
@@ -431,3 +452,40 @@ clipboard.on('success', function(e) {
 clipboard.on('error', function(e) {
         console.log(e);
     });
+
+
+// ********************************
+// Displaying the Onboarding Hints
+// ********************************
+
+function onboarding() {
+	var s = document.getElementById('spacebar-hint');	// spacebar hint
+	var l = document.getElementById('leftkey-hint');	// left arrow hint
+	var r = document.getElementById('rightkey-hint');	// right arrow hint
+
+	var delayTime = 700;
+	// for each onboarding step
+	// hide previous step and show new one
+	if (onboardStep === 0) {
+		s.style.opacity = 1;
+		onboardStep++;
+	} else if (onboardStep === 1) {
+		s.style.opacity = 0;
+		setTimeout( function() {
+			l.style.opacity = 1;
+		}, delayTime);
+		spacebarUsed = true;
+		onboardStep++;
+	} else if (onboardStep === 2) {
+		l.style.opacity = 0;
+		setTimeout( function() {
+			r.style.opacity = 1;
+		}, delayTime);
+		leftkeyUsed = true;
+		onboardStep++;
+	} else if (onboardStep === 3) {
+		r.style.opacity = 0;
+		rightkeyUsed = delayTime;
+		onboardStep++;
+	}
+}

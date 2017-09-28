@@ -1,3 +1,8 @@
+:root {
+	--animation-duration: 0.65s;
+}
+
+
 /******************************
 CSS RESET & GlBAL SETTINGS
 ******************************/
@@ -89,7 +94,7 @@ div.longer-flex {
 header {
   width: 100%;
   min-width: 100%;
-  padding: 1.2rem;
+  padding: 1.5rem 0;
 }
 
 .height-container {
@@ -181,6 +186,9 @@ div.controls-group {
 .selected-link {
 }
 
+.ctr-txt {
+	text-align: center;
+}
 /******************************
 FONT STYLING
 ******************************/
@@ -189,7 +197,7 @@ h1 {
   color: inherit;
 	text-transform: uppercase;
 	font-weight: 700;
-	font-size: 0.875rem;	/*14px*/
+	font-size: 0.875rem;	/* 14px */
 	letter-spacing: .05rem;
 }
 
@@ -205,6 +213,52 @@ p {
 /* 14pt text*/
 .smaller-text {
 	font-size: 0.875rem
+}
+
+
+/******************************
+ONBOARDING HINTS
+******************************/
+
+
+.onboarding-hints {
+	position: relative;
+	font-size: 0.875rem;	/* 14px */
+	letter-spacing: 0.5px;
+}
+
+.onboarding-hint {
+	position: absolute;
+	top: 0%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.hint-text {
+	-webkit-transition: all var(--animation-duration) ease-in-out;
+  -moz-transition: all var(--animation-duration) ease-in-out;
+  -ms-transition: all var(--animation-duration) ease-in-out;
+  -o-transition: all var(--animation-duration) ease-in-out;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+/* Spacebar hint */
+#spacebar-hint { opacity: 0; }
+/* Left Key Hint */
+#leftkey-hint { opacity: 0; }
+/* Right Key Hint */
+#rightkey-hint { opacity: 0; }
+
+.hide {
+	visibility: hidden;
+}
+
+/* Span class for making text look like a key */
+.key-tip {
+	border: 2px solid;
+	padding: 0.25rem 0.75rem;
+	border-radius: 0.5rem;
 }
 
 /******************************
@@ -237,6 +291,7 @@ ul.color-display {
 ul#rgb-display { visibility: visible; }
 ul#hex-display { visibility: hidden; }
 ul#hsl-display { visibility: hidden; }
+
 
 /******************************
 CONTROLS - SLIDERS
