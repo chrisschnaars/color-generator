@@ -25,29 +25,40 @@
 
       <div class="container">
         <!-- Page Title -->
-        <header class="shorter-flex height-container">
-          <div class="controls-group small-group">
-            <h1>Color Generator</h1>
-          </div>
+        <header>
+          <div class="shorter-flex-item height-container h-flex-container">
+            <!-- Logo Area -->
+            <div class="controls-group small-group">
+              <h1>Color Generator</h1>
+            </div>
 
-          <div class="ctr-txt controls-group big-group">
-            <div class="onboarding-hints">
-              <div class="onboarding-hint">
-                <p class="hint-text" id="spacebar-hint"><span class="key-tip">Spacebar</span> generates a color</p>
-              </div>
-              <div class="onboarding-hint">
-                <p class="hint-text" id="leftkey-hint"><span class="key-tip">&larr;</span> goes back in time</p>
-              </div>
-              <div class="onboarding-hint">
-                <p class="hint-text" id="rightkey-hint"><span class="key-tip">&rarr;</span> moves the other way</p>
+            <!-- Onboarding Tips -->
+            <div class="controls-group big-group">
+              <div class="onboarding-hints">
+                <div class="onboarding-hint">
+                  <p class="hint-text" id="spacebar-hint"><span class="key-tip">Spacebar</span> generates a color</p>
+                </div>
+                <div class="onboarding-hint">
+                  <p class="hint-text" id="leftkey-hint"><span class="key-tip">&larr;</span> goes back in time</p>
+                </div>
+                <div class="onboarding-hint">
+                  <p class="hint-text" id="rightkey-hint"><span class="key-tip">&rarr;</span> moves the other way</p>
+                </div>
               </div>
             </div>
-          </div>
 
+            <!-- Help Section -->
+            <div class="controls-group small-group">
+              <div id="help-btn" class="align-right float-right small-group">
+                <p><a href="https://github.com/chrisschnaars/color-generator">Info</a></p>
+              </div>
+            </div>
+
+          </div>
         </header>
 
         <!-- Main Display Area -->
-        <div id="display" class="longer-flex">
+        <div id="display" class="longer-flex-item">
             <ul class="color-display" id="rgb-display">
                 <li id="red-display"></li>
                 <li id="green-display"></li>
@@ -68,8 +79,9 @@
         </div>
 
         <!-- Container for all UI Controls -->
-        <div id="controls" class="shorter-flex height-container">
+        <div id="controls" class="shorter-flex-item height-container">
 
+          <!-- Color Mode selector -->
           <div class="controls-group small-group">
             <div id="rgb-selector" class="link-container selected-link mode-radio rgb-mode">RGB</div>
             <div id="hex-selector" class="link-container unselected-link mode-radio hex-mode">HEX</div>
@@ -100,8 +112,9 @@
             </div>
           </div>
 
+          <!-- Copy CSS Button -->
           <div class="controls-group small-group align-right">
-            <div id="copy-css-btn" data-clipboard-text="Testtestest" class="float-right link-container unselected-link">
+            <div id="copy-css-btn" class="float-right link-container unselected-link">
               <p>Copy CSS</p>
             </div>
           </div>

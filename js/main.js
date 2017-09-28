@@ -67,7 +67,7 @@ var onboardStep = 0;
 // Generate initial random color on load
 window.onload = function() {
 	setRandomColors();
-	setTimeout(onboarding(), 1000);
+	setTimeout(onboarding, 750);
 }
 
 // Key Press Events
@@ -216,7 +216,6 @@ function updateColorArray(r, g, b) {
 		// add color to array
 		colors.push([r,g,b]);
 		colorsIndex++;
-		// console.log(colorsIndex + ' ' + r + ' ' + g + ' ' + b);
 }
 
 // Method to display previous color in array
@@ -386,8 +385,6 @@ function rgbToHsl(r, g, b) {
 
 // Method to change display mode based on user selection
 function updateMode(mode) {
-	// tell me its working
-	console.log("selected " + mode);
 
 	//loop through color modes and select/deselct as needed
 	for (var i = 0; i < modes.length; i++) {
@@ -398,7 +395,6 @@ function updateMode(mode) {
 			var d = document.getElementById(modes[i] + '-display')
 
 			if (mode === modes[i]) {
-				console.log("yes " + modes[i]);
 				// show corresponding display
 				d.style.visibility = 'visible';
 				// // remove unselected
@@ -409,7 +405,6 @@ function updateMode(mode) {
 				// r.checked = true;
 				activeMode = modes[i];
 			} else {
-				console.log("no " + modes[i]);
 				// hide corresponding display
 				d.style.visibility = 'hidden';
 				// remove unselected
@@ -420,7 +415,6 @@ function updateMode(mode) {
 				// r.checked = false;
 			}
 
-			console.log(l.classList);
 		}
 		// reset contrast styles
 		setContrastStyles();
@@ -466,24 +460,24 @@ function onboarding() {
 	var delayTime = 700;
 	// for each onboarding step
 	// hide previous step and show new one
-	if (onboardStep === 0) {
+	if (onboardStep === 0) {	// initial spacebar tip
 		s.style.opacity = 1;
 		onboardStep++;
-	} else if (onboardStep === 1) {
+	} else if (onboardStep === 1) {	// left arrow tip
 		s.style.opacity = 0;
 		setTimeout( function() {
 			l.style.opacity = 1;
 		}, delayTime);
 		spacebarUsed = true;
 		onboardStep++;
-	} else if (onboardStep === 2) {
+	} else if (onboardStep === 2) {	// right arrow tip
 		l.style.opacity = 0;
 		setTimeout( function() {
 			r.style.opacity = 1;
 		}, delayTime);
 		leftkeyUsed = true;
 		onboardStep++;
-	} else if (onboardStep === 3) {
+	} else if (onboardStep === 3) {	// hide tips
 		r.style.opacity = 0;
 		rightkeyUsed = delayTime;
 		onboardStep++;
