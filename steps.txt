@@ -27,9 +27,6 @@ Issues
 - slider styling
 - center display div
 - another text color if neither white nor black is > 4.5
-- conversion numbers are wrong
-- centering of div
-
 
 
 tips:
@@ -37,3 +34,27 @@ tips:
 - if user hits the spacebar, fade that tip out and fade the keyboard controls tip in
   if (spacebardUsed = true)
   if (keyboardUsed)
+
+
+To Do:
+- Clean up JS
+- Responsive
+- Change sliders to HSL when that is selected?
+- Check scoping of variables
+- Hover style of buttons should match selected state
+- fix interfering tool tips
+- think about replacing css for a swatch download feature
+
+Process:
+1. Generate random color values
+2. Update RGB variables
+3. Convert RGB colors to HEX and HSL
+4. Update Hex and HSL variables
+
+5. Update page background color
+6. Update RGB, HEX, and HSL displays
+7. Update slider values
+
+8. calculate contrast ratio and update font color
+
+9. update color array
