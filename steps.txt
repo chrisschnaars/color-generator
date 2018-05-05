@@ -44,6 +44,7 @@ To Do:
 - Hover style of buttons should match selected state
 - fix interfering tool tips
 - think about replacing css for a swatch download feature
+- Using max height for display but can't flexbox deal with that?
 
 Process:
 1. Generate random color values

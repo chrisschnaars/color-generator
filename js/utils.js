@@ -22,7 +22,10 @@ function componentToHex(c) {
 // CONVERT RGB to HSL
 // Found here: https://gist.github.com/mjackson/5311256
 function rgbToHsl(r, g, b) {
+	
+	// DIVIDE EACH VALUE BY 255
 	r /= 255, g /= 255, b /= 255;
+
 	// FIND MIN AND MAX VALUES
 	var max = Math.max(r, g, b);
 	var min = Math.min(r, g, b);
@@ -50,8 +53,9 @@ function rgbToHsl(r, g, b) {
 	// FORMAT VARIABLES
 	h1 = Math.round(h1) + 'º';
 	s1 = Math.round(s1 * 100) + '%';
-	l1 = Math.floor(l1 * 100) + '%'
+	l1 = Math.floor(l1 * 100) + '%';
 
+	// RETURN VALUES
   return [ h1, s1, l1 ];
 }
 
