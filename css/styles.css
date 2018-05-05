@@ -1,5 +1,7 @@
 :root {
 	--animation-duration: 0.55s;
+	/* --unselected-style: rgba(120, 120, 120, 50);
+	--selected-style: rgba(200, 200, 200, 80); */
 }
 
 
@@ -198,12 +200,9 @@ div#controls {
 }
 
 /* Styles for Control Bar LInks*/
-.unselected-link {
+.unselected-link { }
 
-}
-
-.selected-link {
-}
+.selected-link { }
 
 .ctr-txt {
 	text-align: center;

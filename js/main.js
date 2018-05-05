@@ -56,7 +56,7 @@ var s;
 var l;
 
 // FONT COLOR (BLACK OR WHITE > BASED ON CONTRAST)
-// var cc;
+var cc;
 
 // COLOR MODES
 var modes = ['rgb', 'hex', 'hsl'];
@@ -79,7 +79,6 @@ var onboardStep = 0;
 // ****************************************************
 
 window.onload = function() {
-
 	// SETUP EVENT LISTENERS
 	setupMouseEvents();
 
@@ -111,7 +110,7 @@ function generateColor() {
 // UPDATE APP WITH NEW COLOR VALUES
 function setColors(r, g, b) {
 
-	// GENERATE RANDOM RGB VALUE AND SET ALL COLOR VARIABLES
+	// SET ALL COLOR VARIABLES
 	setColorValues(r, g, b);
 
 	// UPDATE CSS COLOR STYLES
@@ -153,14 +152,6 @@ function updateColors() {
 // copyBtn.addEventListener('click', copyCss);
 
 
-
-
-
-
-
-// ********************************
-// Updating Color Mode Display
-// ********************************
 
 
 

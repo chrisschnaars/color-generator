@@ -22,7 +22,7 @@ function componentToHex(c) {
 // CONVERT RGB to HSL
 // Found here: https://gist.github.com/mjackson/5311256
 function rgbToHsl(r, g, b) {
-	
+
 	// DIVIDE EACH VALUE BY 255
 	r /= 255, g /= 255, b /= 255;
 
@@ -101,4 +101,25 @@ function checkContrast(rgb) {
 		return('255, 255, 255');
 	}
 
+}
+
+// SET THE STYLES OF SELECTED AND UNSELECTED BUTTON BASED ON CONTRAST COLOR
+function setButtonStyles() {
+	// SET OPACITY VALUES FOR BUTTON STYLES
+	var a1 = 0.05;
+	var a2 = 0.15;
+
+	// SET BACKGROUND COLOR STYLES OF UNSELECTED BUTTON
+	var y = document.querySelectorAll('.unselected-link');
+  // y.style.setProperty('--unselected-style', 'rgba(' + cc + ', ' + a1 + ')')
+
+	for (i = 0; i < y.length; i++) {
+		y[i].style.backgroundColor = 'rgba(' + cc + ', ' + a1 + ')';
+	}
+
+	// SET BACKGROUND COLOR STYLE OF SELECTED BUTTON
+	var z = document.querySelectorAll('.selected-link');
+	for (i = 0; i < z.length; i++) {
+		z[i].style.setProperty('background-color', 'rgba(' + cc + ', ' + a2 + ')');
+	}
 }

@@ -19,7 +19,6 @@ function setColorValues(r_, g_, b_) {
 	h = hslvalues[0];
 	s = hslvalues[1];
 	l = hslvalues[2];
-
 }
 
 
@@ -46,7 +45,6 @@ function setColorStyles() {
 	redSlider.value = redSliderDisplay.innerHTML = r;
 	greenSlider.value = greenSliderDisplay.innerHTML = g;
 	blueSlider.value = blueSliderDisplay.innerHTML = b;
-
 }
 
 
@@ -55,26 +53,13 @@ function setColorStyles() {
 function setContrastStyles() {
 
 	// SET CONSTRASTING COLOR
-	var cc = checkContrast([r, g, b]);
-
-	// SET OPACITY VALUES FOR BUTTON STYLES
-	var a1 = 0.05;
-	var a2 = 0.15;
+	cc = checkContrast([r, g, b]);
 
 	// SET GLOBAL FONT COLOR
 	pageContainer.style.color = 'rgb(' + cc + ')'
 
-	// SET BACKGROUND COLOR STYLES OF UNSELECTED BUTTON
-	var y = document.querySelectorAll('.unselected-link');
-	for (i = 0; i < y.length; i++) {
-		y[i].style.backgroundColor = 'rgba(' + cc + ', ' + a1 + ')';
-	}
-
-	// SET BACKGROUND COLOR STYLE OF SELECTED BUTTON
-	var z = document.querySelectorAll('.selected-link');
-	for (i = 0; i < z.length; i++) {
-		z[i].style.backgroundColor = 'rgba(' + cc + ', ' + a2 + ')';
-	}
+  // SET GLOBAL BUTTON STYLES
+  setButtonStyles();
 
 }
 
@@ -86,7 +71,7 @@ function updateColorArray() {
 	// REMOVE ALL ELEMENTS BEYOND THEIR POSITION
 	var l = colors.length - 1;
 	if (colorsIndex < l) {
-		colors.splice(colorsIndex + 1, l - colorsIndex)
+		colors.splice(colorsIndex + 1, l - colorsIndex);
 	}
 
 	// // REMOVE COLORS IN ARRAY IF LENGTH EXCEEDS 20
@@ -124,11 +109,13 @@ function displayPreviousColor() {
 // Method to display previous color in array
 function displayNextColor() {
 
-	// HECK TO SEE IF THERE'S A NEXT COLOR
+	// CHECK TO SEE IF THERE'S A NEXT COLOR
 	if (colorsIndex < colors.length - 1) {
 
+    console.log("there's a next color");
 		// VARIABLE FOR USER'S NEXT ARRAY VALUE
 		var b = colorsIndex + 1;
+    console.log(b);
 
 		// UPDATE COLOR STYLES WITH NEXT COLOR IN ARRAY
 		setColors(colors[b][0], colors[b][1], colors[b][2]);
@@ -176,6 +163,7 @@ function updateMode(mode) {
 			}
 
 		}
-		// // reset contrast styles
+		// reset contrast styles
 		// setContrastStyles();
+    setButtonStyles();
 }
