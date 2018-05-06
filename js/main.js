@@ -124,15 +124,6 @@ function setColors(r, g, b) {
 }
 
 
-
-
-
-
-
-
-
-
-
 // UPDATE COLOR & DISPLAYS WITH SLIDER
 function updateColors() {
 	// ADJUST COLOR VARIABLES FOR COLOR VALUE
@@ -141,7 +132,7 @@ function updateColors() {
 	b = blueSlider.value;
 
 	// UPDATE ALL COLORS WITH NEW VALUES
-	updateColorStyles(r, g, b);
+	setColors(r, g, b);
 }
 
 
