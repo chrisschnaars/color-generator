@@ -105,6 +105,8 @@ function generateColor() {
 	// USE THESE COLORS TO UPDATE APP
 	setColors(r_, g_, b_);
 
+	// ADD NEW COLOR TO THE ARRAY
+	updateColorArray();
 }
 
 // UPDATE APP WITH NEW COLOR VALUES
@@ -119,8 +121,6 @@ function setColors(r, g, b) {
 	// SET CONTRAST COLOR STYLES
 	setContrastStyles();
 
-	// ADD NEW COLOR TO THE ARRAY
-	updateColorArray();
 }
 
 
