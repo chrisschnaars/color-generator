@@ -56,7 +56,9 @@ function setContrastStyles() {
 	cc = checkContrast([r, g, b]);
 
 	// SET GLOBAL FONT COLOR
-	pageContainer.style.color = 'rgb(' + cc + ')'
+	pageContainer.style.color = 'rgb(' + cc + ')';
+
+  // document.documentElement.style.setProperty('--button-color', 'rgb(' + cc + ')');
 
   // SET GLOBAL BUTTON STYLES
   setButtonStyles();

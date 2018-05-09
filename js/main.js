@@ -22,9 +22,6 @@ var hueDisplay = document.getElementById('hue-display');
 var satDisplay = document.getElementById('saturation-display');
 var lightDisplay = document.getElementById('lightness-display');
 
-// COLOR DISPLAY ELEMENTS
-
-
 // RGB SLIDER CONTROLS
 var redSlider = document.getElementById('red-control');
 var greenSlider = document.getElementById('green-control');
@@ -123,7 +120,6 @@ function setColors(r, g, b) {
 
 }
 
-
 // UPDATE COLOR & DISPLAYS WITH SLIDER
 function updateColors() {
 	// ADJUST COLOR VARIABLES FOR COLOR VALUE
@@ -136,45 +132,36 @@ function updateColors() {
 }
 
 
+// ****************************************************
+// COPY CSS BUTTON
+// ****************************************************
 
-
-
-// Copy css text
-// copyBtn.addEventListener('click', copyCss);
-
-
-
-
-
-// ********************************
-// Copy CSS Text
-// ********************************
-
-// using clipboard.js
-// copy css according to selected mode
+// COPY CURRENT COLOR'S CSS VALUE TO CLIPBOARD
+// USING CLIPBOARD.JS
 var clipboard = new Clipboard('#copy-css-btn', {
-        text: function() {
-					if (activeMode === modes[0]) {
-						return 'color: rgb(' + r + ', ' + g + ', ' + b + ');';
-					} else if (activeMode === modes[1]) {
-            return 'color: ' + hex.toUpperCase(); + ';';
-          } else if (activeMode === modes[2]) {
-            return 'color: hsl(' + h + ', ' + s + ', ' + l + ');';
-          }
-        }
-    });
+    text: function() {
+			if (activeMode === modes[0]) {
+				return 'color: rgb(' + r + ', ' + g + ', ' + b + ');';
+			} else if (activeMode === modes[1]) {
+        return 'color: ' + hex.toUpperCase(); + ';';
+      } else if (activeMode === modes[2]) {
+        return 'color: hsl(' + h + ', ' + s + ', ' + l + ');';
+      }
+    }
+});
 
 clipboard.on('success', function(e) {
-    });
+		console.log(e);
+});
 
 clipboard.on('error', function(e) {
-        console.log(e);
-    });
+	console.log(e);
+});
 
 
-// ********************************
-// Displaying the Onboarding Hints
-// ********************************
+// ****************************************************
+// ONBOARDING DISPLAY
+// ****************************************************
 
 function onboarding() {
 	var s = document.getElementById('spacebar-hint');	// spacebar hint

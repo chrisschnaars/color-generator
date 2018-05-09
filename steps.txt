@@ -1,15 +1,11 @@
 COLOR GENERATOR
 A simple tool for finding colors.
 
-To Do:
-- keyboard tips?
 
 Potential Features
 - Text input of color values? (click on color value and change it...)
 
 Fixes Needed:
-- Add the input back to mode selection? Not sure this is great for accessibility (or change these all to buttons)
-- The way I'm updating select/unselect is sort of a hack..
 
 Challenges Along the Way:
 - keyCode is being deprecated. find alternatives.
@@ -29,22 +25,19 @@ Issues
 - another text color if neither white nor black is > 4.5
 
 
-tips:
-- show initial space bar tip
-- if user hits the spacebar, fade that tip out and fade the keyboard controls tip in
-  if (spacebardUsed = true)
-  if (keyboardUsed)
-
-
 To Do:
-- Clean up JS
 - Responsive
-- Check scoping of variables
-- Hover style of buttons should match selected state
-- fix interfering tool tips
-- think about replacing css for a swatch download feature
-- Using max height for display but can't flexbox deal with that?
-- fix up Flexbox, use for both horizontal and vertical
+- Fix buttons
+  - Hover style of buttons should match selected state
+    - use css variable?
+  - Press state
+  - Copy CSS confirmation
+- Flexbox
+  - Using max height for display but can't flexbox deal with that?
+  - fix up Flexbox, use for both horizontal and vertical
+- remove degrees from hsl copy value
+
+
 
 Process:
 1. Generate random color values

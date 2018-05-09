@@ -29,17 +29,22 @@
 
     <body>
 
-      <div class="container">
-        <!-- Page Title -->
-        <header>
-          <div class="shorter-flex-item height-container h-flex-container">
-            <!-- Logo Area -->
-            <div class="controls-group small-group">
+      <!-- FULL PAGE BACKGROUND | FLEX CONTAINER 1 -->
+      <div class="container w-100 h-100 f f-flow-1 f-jc-1">
+
+        <!-- HEADER BAR | FLEX ITEM 1.1 -->
+        <header class="w-100 f-flex-1">
+
+          <!-- FLEX CONTAINER 2 -->
+          <div class="pt-2 pb-2 f-flow-1 f-jc-1 f-al-1">
+
+            <!-- SITE TITLE | FLEX ITEM 2.1 -->
+            <div class="w-33 f-left pl-1 pr-1 f-flex-1">
               <h1>Color Generator</h1>
             </div>
 
-            <!-- Onboarding Tips -->
-            <div class="controls-group big-group">
+            <!-- ONBOARDING TIPS | FLEX ITEM 2.2 -->
+            <div class="w-33 f-left pl-1 pr-1 f-flex-1">
               <div class="onboarding-hints">
                 <div class="onboarding-hint">
                   <p class="hint-text" id="spacebar-hint"><span class="key-tip">Spacebar</span>&nbsp;&nbsp;will generate a new color.</p>
@@ -53,8 +58,8 @@
               </div>
             </div>
 
-            <!-- Help Section -->
-            <div class="controls-group small-group">
+            <!-- INFO BUTTON | FLEX ITEM 2.3 -->
+            <div class="w-33 f-left pl-1 pr-1 f-flex-1 f-right">
               <div id="help-btn" class="align-right float-right small-group">
                 <p><a href="https://github.com/chrisschnaars/color-generator">Info</a></p>
               </div>
@@ -63,63 +68,65 @@
           </div>
         </header>
 
-        <!-- Main Display Area -->
-        <div id="display" class="longer-flex-item">
-            <ul class="color-display" id="rgb-display">
+
+        <!-- COLOR DISPLAY | FLEX ITEM 1.2 -->
+        <div id="display" class="w-100 f-flex-1">
+            <ul class="w-100 color-display" id="rgb-display">
                 <li id="red-display"></li>
                 <li id="green-display"></li>
                 <li id="blue-display"></li>
             </ul>
 
-            <ul class="color-display" id="hex-display">
+            <ul class="w-100 color-display" id="hex-display">
                 <li class="caps" id="hex-value-display"></li>
             </ul>
 
-            <ul class="color-display" id="hsl-display">
+            <ul class="w-100 color-display" id="hsl-display">
                 <li id="hue-display"></li>
                 <li id="saturation-display"></li>
                 <li id="lightness-display"></li>
             </ul>
-
-
         </div>
 
-        <!-- Container for all UI Controls -->
-        <div id="controls" class="shorter-flex-item height-container">
 
-          <!-- Color Mode selector -->
-          <div class="controls-group small-group">
-            <div id="rgb-selector" class="link-container selected-link mode-radio rgb-mode">RGB</div>
-            <div id="hex-selector" class="link-container unselected-link mode-radio hex-mode">HEX</div>
-            <div id="hsl-selector" class="link-container unselected-link mode-radio hsl-mode">HSL</div>
-          </div>
+        <!-- COLOR CONTROL BAR | FLEX ITEM 1.3 -->
+        <div class="w-100 f-flex-1">
+          <!-- FLEX CONTAINER 3 -->
+          <div class="pt-2 pb-2 f-flow-1 f-jc-1 f-al-1">
+
+            <!-- COLOR DISPLAY MODE SELECTOR | FLEX ITEM 3.1 -->
+            <div class="pl-1 pr-1 f-flex-1">
+              <div id="rgb-selector" class="link-container selected-link mode-radio rgb-mode">RGB</div>
+              <div id="hex-selector" class="link-container unselected-link mode-radio hex-mode">HEX</div>
+              <div id="hsl-selector" class="link-container unselected-link mode-radio hsl-mode">HSL</div>
+            </div>
 
             <!-- Sliders for Adjusting RGB Values -->
-          <div class="controls-group big-group">
-            <div class="sliders-group">
+            <div class="pl-1 pr-1 f-flex-2">
+              <div class="sliders-group">
 
-              <div class="slider-unit">
-                <label for="red-control">Red <span id="red-slider-display"></span></label>
-                <br>
-                <input type="range" id="red-control" placeholder="Red" value="255" min="0" max="255" tabindex="0"></input>
-              </div>
+                <div class="slider-unit">
+                  <label for="red-control">Red <span id="red-slider-display"></span></label>
+                  <br>
+                  <input type="range" id="red-control" placeholder="Red" value="255" min="0" max="255" tabindex="0"></input>
+                </div>
 
-              <div class="slider-unit">
-                <label for="green-control">Green <span id="green-slider-display"></span></label>
-                <br>
-                <input type="range" id="green-control" placeholder="Green" value="0" min="0" max="255" tabindex="0"></input>
-              </div>
+                <div class="slider-unit">
+                  <label for="green-control">Green <span id="green-slider-display"></span></label>
+                  <br>
+                  <input type="range" id="green-control" placeholder="Green" value="0" min="0" max="255" tabindex="0"></input>
+                </div>
 
-              <div class="slider-unit">
-                <label for="blue-control">Blue <span id="blue-slider-display"></span></label>
-                <br>
-                <input type="range" id="blue-control" placeholder="Blue" value="255" min="0" max="255" tabindex="0"></input>
+                <div class="slider-unit">
+                  <label for="blue-control">Blue <span id="blue-slider-display"></span></label>
+                  <br>
+                  <input type="range" id="blue-control" placeholder="Blue" value="255" min="0" max="255" tabindex="0"></input>
+                </div>
               </div>
             </div>
-          </div>
 
           <!-- Copy CSS Button -->
-          <div class="controls-group small-group align-right">
+          <div class="pl-1 pr-1 f-flex-1">
             <div id="copy-css-btn" class="float-right link-container unselected-link">
               <p>Copy CSS</p>
             </div>

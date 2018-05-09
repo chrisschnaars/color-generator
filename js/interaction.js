@@ -80,5 +80,4 @@ function setupMouseEvents() {
   greenSlider.addEventListener('input', updateColors);
   blueSlider.addEventListener('input', updateColors);
 
-
 }
