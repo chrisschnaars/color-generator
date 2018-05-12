@@ -108,18 +108,22 @@ function setButtonStyles() {
 	// SET OPACITY VALUES FOR BUTTON STYLES
 	var a1 = 0.05;
 	var a2 = 0.15;
+	var a3 = 0.18;
 
 	// SET BACKGROUND COLOR STYLES OF UNSELECTED BUTTON
-	var y = document.querySelectorAll('.unselected-link');
-  // y.style.setProperty('--unselected-style', 'rgba(' + cc + ', ' + a1 + ')')
+	// var y = document.querySelectorAll('.btn-default');
+	// var y = document.querySelectorAll('button');
+  document.documentElement.style.setProperty('--button-color-default', 'rgba(' + cc + ', ' + a1 + ')')
+	document.documentElement.style.setProperty('--button-color-hover', 'rgba(' + cc + ', ' + a2 + ')')
+	document.documentElement.style.setProperty('--button-color-active', 'rgba(' + cc + ', ' + a3 + ')')
 
-	for (i = 0; i < y.length; i++) {
-		y[i].style.backgroundColor = 'rgba(' + cc + ', ' + a1 + ')';
-	}
+	// for (i = 0; i < y.length; i++) {
+	// 	y[i].style.backgroundColor = 'rgba(' + cc + ', ' + a1 + ')';
+	// }
 
 	// SET BACKGROUND COLOR STYLE OF SELECTED BUTTON
-	var z = document.querySelectorAll('.selected-link');
-	for (i = 0; i < z.length; i++) {
-		z[i].style.setProperty('background-color', 'rgba(' + cc + ', ' + a2 + ')');
-	}
+	// var z = document.querySelectorAll('.btn-active');
+	// for (i = 0; i < z.length; i++) {
+	// 	z[i].style.setProperty('background-color', 'rgba(' + cc + ', ' + a2 + ')');
+	// }
 }

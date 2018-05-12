@@ -149,9 +149,9 @@ function updateMode(mode) {
 				// TOGGLE CORRESPONDING DISPLAY TO DISPLAY
 				d.style.visibility = 'visible';
 				// REMOVE UNSELECTED CLASS
-				l.classList.remove('unselected-link');
+				// l.classList.remove('unselected-link');
 				// ADD SELECTED CLASS
-				l.classList.add('selected-link');
+				l.classList.add('btn-active');
 				// SET AS ACTIVE
 				activeMode = modes[i];
 			} else {
@@ -159,9 +159,9 @@ function updateMode(mode) {
 				// HIDE THEIR DISPLAY
 				d.style.visibility = 'hidden';
 				// REMOVE SELECTED CLASS
-				l.classList.remove('selected-link');
+				l.classList.remove('btn-active');
 				// ADD UNSELECTED CLASS
-				l.classList.add('unselected-link');
+				// l.classList.add('unselected-link');
 			}
 
 		}

@@ -1,11 +1,13 @@
 /****************************************************
-CSS VARIABLES
+CSS CUSTOM PROPERTIES
 ****************************************************/
 
 :root {
 	--animation-duration: 0.55s;
 	/* BUTTON COLOR CHANGES ON CONTRAST  */
-	--button-color: rgba(150, 150, 150, 50);
+	--button-color-default: rgba(150, 150, 150, 50);
+	--button-color-hover: rgba(150, 150, 150, 50);
+	--button-color-active: rgba(150, 150, 150, 50);
 }
 
 
@@ -112,15 +114,15 @@ FLEXBOX ITEMS
 ****************************************************/
 
 .f-flex-1 {
-	-webkit-box-flex: 0;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
+	-webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .f-flex-2 {
-	-webkit-box-flex: 0;
-  -ms-flex: 0 2 auto;
-  flex: 0 2 auto;
+	-webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 2;
 }
 
 
@@ -134,6 +136,7 @@ LAYOUT
 
 /* HEIGHT STYLES */
 .h-100 { height: 100vh; }
+.h-6r { height: 6rem; }
 
 /* FLOAT STYLES */
 .f-left { float: left; }
@@ -148,121 +151,82 @@ LAYOUT
   color: black;
 }
 
-div.shorter-flex-item {
-	flex: 1 1 auto;
-}
-
-div.longer-flex-item {
-	flex: 1 1 auto;
-}
-
-
-/* Horizontal Flex Container */
-.h-flex-container {
-	width: 100%;
-	min-width: 100%;
-	display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-  justify-content: space-around;
-}
-
-
-
 
 /****************************************************
 PADDING
 ****************************************************/
 
 /* TOP PADDING */
+.pt-1 { padding-top: 1rem; }
 .pt-2 { padding-top: 2rem;}
 
 /* RIGHT PADDING */
 .pr-1 { padding-right: 1rem; }
 
 /* BOTTOM PADDING */
+.pb-1 { padding-bottom: 1rem; }
 .pb-2 { padding-bottom: 2rem; }
 
 /* LEFT PADDING */
 .pl-1 { padding-left: 1rem; }
 
 
-
-
-
-
-.height-container {
-	height: 70px;
-	max-height: 70px;
-}
-
-/* Container for text logo */
-.logo-container {
-	width: 40%;
-	float: left;
-}
+/****************************************************
+ELEMENT POSITIONING
+****************************************************/
 
 /* Container for R,G,B display */
 /* Better way of vertically centering? Flexbox? */
-#display {
-  position: relative;
-  z-index: 0;
-  width: 100%;
-	margin: 0 auto;
-	height: 120px;
-	max-height: 140px;
-}
+#display { }
 
 /* Container for all controls*/
 /* Trying out flexbox here */
-div#controls {
-	width: 100%;
-	min-width: 100%;
-  /*position: fixed;*/
+#control-bar {
+  position: fixed;
   bottom: 0;
-	padding: 0.5rem 0;
 }
 
-/* Generic container For Each Group of controls */
-.controls-group {
-	padding: 0 1rem;
-	float: left;
+
+/****************************************************
+BUTTONS
+****************************************************/
+
+/* DEFAULT BUTTON STYLES */
+button {
+	border: none;
+	font-family: inherit;
+	cursor: pointer;
+	background-color: var(--button-color-default);
 }
 
-/* Sizing for small control groups */
-.small-group {
-	width: 25%;
+/* DEFAULT FOCUS STYLE */
+button:focus { }
+
+button:hover {
+	background-color: var(--button-color-hover);
+}
+button:active {
+	outline: none;
+	background-color: var(--button-color-active);
 }
 
-/* Sizing for large control groups */
-.big-group {
-	width: 50%
+.btn-default { }
+.btn-active {
+	background-color: var(--button-color-hover);
 }
 
-/* Global align text right class */
-.align-right {
-	text-align: right;
-}
+
+/* CONTROL BAR BUTTON STYING */
+/* SET AND UPDATED IN JS BASED ON CONTRAST COLOR */
+.unselected-link { }
+.selected-link { }
+
 
 /* Container for all links and buttons in control bar */
-.link-container {
-	padding: 1rem;
-	float: left;
-	/* background-color: var(--button-color); */
-}
-
 .link-container:hover {
-	/* opacity: 0.05; */
-	/* background-color: var(--button-color); */
 	cursor: pointer;
 }
 
-.float-right {
-	float: right;
-}
 
 /* Container For All Sliders */
 .sliders-group {
@@ -277,22 +241,17 @@ div#controls {
 	text-align: left; /* resets left align*/
 }
 
-/* Styles for Control Bar LInks*/
-.unselected-link {
-	/* opacity: 0.15; */
-}
 
-.selected-link {
-	/* opacity: 0.05; */
-}
 
-.ctr-txt {
-	text-align: center;
-}
+/****************************************************
+TYPOGRAPHY
+****************************************************/
 
-/******************************
-FONT STYLING
-******************************/
+/* TEXT ALIGNMENT */
+.t-ctr { text-align: center; }
+.t-rt {	text-align: right; }
+
+.fs-1 { font-size: 1rem; }
 
 h1 {
   color: inherit;
@@ -302,9 +261,7 @@ h1 {
 	letter-spacing: .05rem;
 }
 
-p {
-
-}
+p { }
 
 a {
 	color: inherit;
@@ -313,23 +270,19 @@ a {
 }
 
 a:hover {
-	opacity: 0.5;
+	/* opacity: 0.5; */
+	border: none;
 }
 
-/* global capitlization */
-.caps {
-	text-transform: uppercase;
-}
-
-/* 14pt text*/
-.smaller-text {
-	font-size: 0.875rem
-}
+/* TEXT TRANSFORM */
+.t-caps { text-transform: uppercase; }
 
 
-/******************************
+
+
+/****************************************************
 ONBOARDING HINTS
-******************************/
+****************************************************/
 
 
 .onboarding-hints {
@@ -373,6 +326,9 @@ ONBOARDING HINTS
 	border-radius: 0.5rem;
 }
 
+
+
+
 /******************************
 MAIN DISPLAY LIST
 ******************************/
@@ -394,7 +350,6 @@ li {
 
 ul.color-display {
 	position: absolute;
-	top:0;
 	text-align: center;
 }
 
@@ -482,8 +437,3 @@ input[type=range]:focus::-moz-range-thumb {
 	border: 0;
 	box-shadow: 0 0 0 3px rgba(0,0,0,.25);
 }
-
-
-/******************************
-CONTROLS - SEGMENTED SELECTOR
-******************************/

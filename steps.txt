@@ -27,15 +27,15 @@ Issues
 
 To Do:
 - Responsive
-- Fix buttons
-  - Hover style of buttons should match selected state
-    - use css variable?
-  - Press state
-  - Copy CSS confirmation
+- Copy CSS confirmation
 - Flexbox
   - Using max height for display but can't flexbox deal with that?
   - fix up Flexbox, use for both horizontal and vertical
 - remove degrees from hsl copy value
+
+- CSS Lint
+- JS Lint
+- JS Test
 
 
 

@@ -36,15 +36,15 @@
         <header class="w-100 f-flex-1">
 
           <!-- FLEX CONTAINER 2 -->
-          <div class="pt-2 pb-2 f-flow-1 f-jc-1 f-al-1">
+          <div class="pt-2 pb-2 f f-flow-2 f-jc-1">
 
             <!-- SITE TITLE | FLEX ITEM 2.1 -->
-            <div class="w-33 f-left pl-1 pr-1 f-flex-1">
+            <div class="pl-1 pr-1 f-flex-1">
               <h1>Color Generator</h1>
             </div>
 
             <!-- ONBOARDING TIPS | FLEX ITEM 2.2 -->
-            <div class="w-33 f-left pl-1 pr-1 f-flex-1">
+            <div class="pl-1 pr-1 f-flex-2">
               <div class="onboarding-hints">
                 <div class="onboarding-hint">
                   <p class="hint-text" id="spacebar-hint"><span class="key-tip">Spacebar</span>&nbsp;&nbsp;will generate a new color.</p>
@@ -59,8 +59,8 @@
             </div>
 
             <!-- INFO BUTTON | FLEX ITEM 2.3 -->
-            <div class="w-33 f-left pl-1 pr-1 f-flex-1 f-right">
-              <div id="help-btn" class="align-right float-right small-group">
+            <div class="pl-1 pr-1 f-flex-1">
+              <div id="help-btn" class="t-rt">
                 <p><a href="https://github.com/chrisschnaars/color-generator">Info</a></p>
               </div>
             </div>
@@ -78,7 +78,7 @@
             </ul>
 
             <ul class="w-100 color-display" id="hex-display">
-                <li class="caps" id="hex-value-display"></li>
+                <li class="t-caps" id="hex-value-display"></li>
             </ul>
 
             <ul class="w-100 color-display" id="hsl-display">
@@ -90,18 +90,31 @@
 
 
         <!-- COLOR CONTROL BAR | FLEX ITEM 1.3 -->
-        <div class="w-100 f-flex-1">
+        <div id="control-bar" class="w-100 f-flex-1">
           <!-- FLEX CONTAINER 3 -->
-          <div class="pt-2 pb-2 f-flow-1 f-jc-1 f-al-1">
+          <div class="pt-2 pb-1 f f-flow-2 f-jc-1">
 
             <!-- COLOR DISPLAY MODE SELECTOR | FLEX ITEM 3.1 -->
             <div class="pl-1 pr-1 f-flex-1">
-              <div id="rgb-selector" class="link-container selected-link mode-radio rgb-mode">RGB</div>
-              <div id="hex-selector" class="link-container unselected-link mode-radio hex-mode">HEX</div>
-              <div id="hsl-selector" class="link-container unselected-link mode-radio hsl-mode">HSL</div>
+
+              <button id="rgb-selector" type="button" class="btn-default btn-active f-left pt-1 pr-1 pb-1 pl-1">
+                <p class="fs-1">RGB</p>
+              </button>
+
+              <button id="hex-selector" type="button" class="btn-default f-left pt-1 pr-1 pb-1 pl-1">
+                <p class="fs-1">HEX</p>
+              </button>
+
+              <button id="hsl-selector" type="button" class="btn-default f-left pt-1 pr-1 pb-1 pl-1">
+                <p class="fs-1">HSL</p>
+              </button>
+<!--
+              <div id="rgb-selector" class="f-left link-container pt-1 pr-1 pb-1 pl-1 selected-link mode-radio rgb-mode">RGB</div>
+              <div id="hex-selector" class="f-left link-container pt-1 pr-1 pb-1 pl-1  unselected-link mode-radio hex-mode">HEX</div>
+              <div id="hsl-selector" class="f-left link-container pt-1 pr-1 pb-1 pl-1  unselected-link mode-radio hsl-mode">HSL</div> -->
             </div>
 
-            <!-- Sliders for Adjusting RGB Values -->
+            <!-- RGB SLIDERS | FLEX ITEM 3.2 -->
             <div class="pl-1 pr-1 f-flex-2">
               <div class="sliders-group">
 
@@ -127,9 +140,12 @@
 
           <!-- Copy CSS Button -->
           <div class="pl-1 pr-1 f-flex-1">
-            <div id="copy-css-btn" class="float-right link-container unselected-link">
+            <button id="copy-css-btn" type="button" class="btn-default pt-1 pr-1 pb-1 pl-1 f-right">
+              <p class="fs-1">Copy CSS</p>
+            </button>
+            <!-- <div id="copy-css-btn" class="f-right link-container pt-1 pr-1 pb-1 pl-1 unselected-link">
               <p>Copy CSS</p>
-            </div>
+            </div> -->
           </div>
 
         </div>
