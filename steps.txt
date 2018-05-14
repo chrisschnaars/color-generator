@@ -26,12 +26,12 @@ Issues
 To Do:
 - Responsive
 - Copy CSS confirmation
-- Sliders css
 - typography css
 - onboarding css
 - center display
 - remove degrees from hsl copy value
 - display centering bug
+- onboarding hint transition font color bug
 
 - CSS Lint
 - JS Lint

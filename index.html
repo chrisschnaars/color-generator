@@ -40,7 +40,7 @@
 
             <!-- SITE TITLE | FLEX ITEM 2.1 -->
             <div class="pl-1 pr-1 f-flex-1">
-              <h1>Color Generator</h1>
+              <h1 class="fc-inherit fs-1 fw-700 t-caps ls-05">Color Generator</h1>
             </div>
 
             <!-- ONBOARDING TIPS | FLEX ITEM 2.2 -->
@@ -61,7 +61,7 @@
             <!-- INFO BUTTON | FLEX ITEM 2.3 -->
             <div class="pl-1 pr-1 f-flex-1">
               <div id="help-btn" class="t-rt">
-                <p><a href="https://github.com/chrisschnaars/color-generator">Info</a></p>
+                <p><a class="fc-inherit" href="https://github.com/chrisschnaars/color-generator">Info</a></p>
               </div>
             </div>
 
@@ -73,19 +73,19 @@
         <div id="display" class="w-100 f-flex-1 f f-flow-2 ">
           <div>
             <ul class="w-100 t-ctr mode-display" id="rgb-display">
-                <li id="red-display" class="ml-1 mr-1"></li>
-                <li id="green-display" class="ml-1 mr-1"></li>
-                <li id="blue-display" class="ml-1 mr-1"></li>
+                <li id="red-display" class="fc-inherit fs-6 ml-1 mr-1"></li>
+                <li id="green-display" class="fc-inherit fs-6 ml-1 mr-1"></li>
+                <li id="blue-display" class="fc-inherit fs-6 ml-1 mr-1"></li>
             </ul>
 
             <ul class="w-100 t-ctr mode-display" id="hex-display">
-                <li id="hex-value-display" class="t-caps ml-1 mr-1"></li>
+                <li id="hex-value-display" class="fc-inherit fs-6 t-caps ml-1 mr-1"></li>
             </ul>
 
             <ul class="w-100 t-ctr mode-display" id="hsl-display">
-                <li id="hue-display" class="ml-1 mr-1"></li>
-                <li id="saturation-display" class="ml-1 mr-1"></li>
-                <li id="lightness-display" class="ml-1 mr-1"></li>
+                <li id="hue-display" class="fc-inherit ml-1 mr-1"></li>
+                <li id="saturation-display" class="fc-inherit fs-6 ml-1 mr-1"></li>
+                <li id="lightness-display" class="fc-inherit fs-6 ml-1 mr-1"></li>
             </ul>
           </div>
         </div>
@@ -114,21 +114,21 @@
 
             <!-- RGB SLIDERS | FLEX ITEM 3.2 -->
             <div class="pl-1 pr-1 f-flex-2">
-              <div class="sliders-group">
+              <div class="m-0-auto t-ctr">
 
-                <div class="slider-unit">
+                <div class="pl-1 pr-1 d-ib">
                   <label for="red-control">Red <span id="red-slider-display"></span></label>
                   <br>
                   <input type="range" id="red-control" placeholder="Red" value="255" min="0" max="255" tabindex="0"></input>
                 </div>
 
-                <div class="slider-unit">
+                <div class="pl-1 pr-1 d-ib">
                   <label for="green-control">Green <span id="green-slider-display"></span></label>
                   <br>
                   <input type="range" id="green-control" placeholder="Green" value="0" min="0" max="255" tabindex="0"></input>
                 </div>
 
-                <div class="slider-unit">
+                <div class="pl-1 pr-1 d-ib">
                   <label for="blue-control">Blue <span id="blue-slider-display"></span></label>
                   <br>
                   <input type="range" id="blue-control" placeholder="Blue" value="255" min="0" max="255" tabindex="0"></input>

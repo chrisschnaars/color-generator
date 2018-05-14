@@ -67,9 +67,8 @@ table {
 	border-spacing: 0;
 }
 
-
 /****************************************************
-FLEXBOX CONTAINER
+DISPLAY
 ****************************************************/
 
 /* FLEX DISPLAY */
@@ -78,6 +77,16 @@ FLEXBOX CONTAINER
   display: -ms-flexbox;
   display: flex;
 }
+
+/* INLINE BLOCK */
+.d-ib {
+	display: inline-block;
+}
+
+/****************************************************
+FLEXBOX CONTAINER
+****************************************************/
+
 
 /* FLEX FLOW */
 .f-flow-1 {
@@ -143,8 +152,6 @@ LAYOUT
 .f-left { float: left; }
 .f-right { float: right; }
 
-
-
 /* Full Page Container */
 /* These values are what changes via Javascript*/
 .container {
@@ -173,13 +180,13 @@ PADDING & MARGINS
 
 /* AUTO MARGIN */
 .m-auto { margin: auto; }
+.m-0-auto { margin: 0 auto; }
 
 /* LEFT MARGIN */
 .ml-1 { margin-left: 1rem; }
 
 /* RIGHT MARGIN */
 .mr-1 { margin-right: 1rem; }
-
 
 
 /****************************************************
@@ -240,29 +247,25 @@ button:active {
 	background-color: var(--button-color-hover);
 }
 
-/* Container For All Sliders */
-.sliders-group {
-	margin: 0 auto;
-	text-align: center; /* Using text align to center all sliders in div. Is this a hack? */
-}
-
-/* container for single group of slider and label */
-.slider-unit {
-	display: inline-block;
-	padding: 0 1rem;
-	text-align: left; /* resets left align*/
-}
-
-
 
 /****************************************************
 TYPOGRAPHY
 ****************************************************/
 
 /* FONT SIZES */
+.fs-0875 { font-size: 0.875rem; }
 .fs-1 { font-size: 1rem; }
+.fs-6 { font-size: 6rem; }
 
 /* FONT WEIGHT */
+.fw-400 { font-weight: 400; }
+.fw-700 { font-weight: 700; }
+
+/* COLOR */
+.fc-inherit { color: inherit; }
+
+/* LETTER SPACING */
+.ls-05 { letter-spacing: 0.05rem;v}
 
 /* TEXT ALIGNMENT */
 .t-ctr { text-align: center; }
@@ -272,30 +275,19 @@ TYPOGRAPHY
 .t-caps { text-transform: uppercase; }
 
 
-h1 {
-  color: inherit;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 0.875rem;	/* 14px */
-	letter-spacing: .05rem;
-}
+/****************************************************
+LINKS
+****************************************************/
 
-p { }
-
+/* GLOBAL LINK STYLES */
 a {
-	color: inherit;
 	text-decoration: none;
 	border-bottom: 1px solid;
 }
 
 a:hover {
-	/* opacity: 0.5; */
 	border: none;
 }
-
-
-
-
 
 
 /****************************************************
@@ -345,32 +337,24 @@ ONBOARDING HINTS
 }
 
 
-
-
 /******************************
 MAIN DISPLAY LIST
 ******************************/
 
 ul { }
 
-li {
-    display: inline;
-    font-size: 6rem;
-		font-weight: 400;
-    margin: 0 1rem;
-    color: inherit;
-}
+li { display: inline; }
 
 #rgb-display { visibility: visible; }
 #hex-display { visibility: hidden; }
 #hsl-display { visibility: hidden; }
 
 
-/******************************
+/****************************************************
 CONTROLS - SLIDERS
-******************************/
+****************************************************/
 
-/* RGB Color Sliders */
+/* RGB SLIDERS */
 
 input[type=range] {
   vertical-align: middle;
@@ -414,19 +398,18 @@ input[type=range]::-moz-range-thumb {
     background-color: currentcolor;
 }
 
-
 input[type=range]::-webkit-slider-runnable-track {
     height: .25rem;
     cursor: pointer;
-		border-radius: 3px;
-    background-color: rgba(0,0,0,.25);
+		border-radius: 4px;
+    background-color: var(--button-color-active);
 }
 
 input[type=range]::-moz-range-track {
     height: .25rem;
     cursor: pointer;
-		border-radius: 3px;
-    background-color: rgba(0,0,0,.25)
+		border-radius: 4px;
+    background-color: var(--button-color-active);
 }
 
 /* Disable the standard blue border focus element */
