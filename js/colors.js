@@ -58,8 +58,6 @@ function setContrastStyles() {
 	// SET GLOBAL FONT COLOR
 	pageContainer.style.color = 'rgb(' + cc + ')';
 
-  // document.documentElement.style.setProperty('--button-color', 'rgb(' + cc + ')');
-
   // SET GLOBAL BUTTON STYLES
   setButtonStyles();
 
@@ -151,7 +149,7 @@ function updateMode(mode) {
 				// REMOVE UNSELECTED CLASS
 				// l.classList.remove('unselected-link');
 				// ADD SELECTED CLASS
-				l.classList.add('btn-active');
+				l.classList.add('btn-selected');
 				// SET AS ACTIVE
 				activeMode = modes[i];
 			} else {
@@ -159,7 +157,7 @@ function updateMode(mode) {
 				// HIDE THEIR DISPLAY
 				d.style.visibility = 'hidden';
 				// REMOVE SELECTED CLASS
-				l.classList.remove('btn-active');
+				l.classList.remove('btn-selected');
 				// ADD UNSELECTED CLASS
 				// l.classList.add('unselected-link');
 			}

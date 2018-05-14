@@ -21,17 +21,17 @@ Learned:
 
 Issues
 - slider styling
-- center display div
 - another text color if neither white nor black is > 4.5
-
 
 To Do:
 - Responsive
 - Copy CSS confirmation
-- Flexbox
-  - Using max height for display but can't flexbox deal with that?
-  - fix up Flexbox, use for both horizontal and vertical
+- Sliders css
+- typography css
+- onboarding css
+- center display
 - remove degrees from hsl copy value
+- display centering bug
 
 - CSS Lint
 - JS Lint
