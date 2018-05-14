@@ -28,16 +28,12 @@ To Do:
 - Copy CSS confirmation
 - typography css
 - onboarding css
-- center display
-- remove degrees from hsl copy value
 - display centering bug
 - onboarding hint transition font color bug
 
 - CSS Lint
 - JS Lint
 - JS Test
-
-
 
 Process:
 1. Generate random color values

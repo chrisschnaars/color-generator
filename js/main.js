@@ -145,7 +145,10 @@ var clipboard = new Clipboard('#copy-css-btn', {
 			} else if (activeMode === modes[1]) {
         return 'color: ' + hex.toUpperCase(); + ';';
       } else if (activeMode === modes[2]) {
-        return 'color: hsl(' + h + ', ' + s + ', ' + l + ');';
+				// REMOVE DEGREE SYMBOL FROM HUE VALUE
+				var n = h.length;
+				var hh = h.substring(0, n - 1);
+        return 'color: hsl(' + hh + ', ' + s + ', ' + l + ');';
       }
     }
 });
