@@ -27,9 +27,10 @@ To Do:
 - Responsive
 - Copy CSS confirmation
 - typography css
-- onboarding css
+- slider styling
 - display centering bug
 - onboarding hint transition font color bug
+- increase margin between slider and label
 
 - CSS Lint
 - JS Lint
@@ -48,3 +49,7 @@ Process:
 8. calculate contrast ratio and update font color
 
 9. update color array
+
+Button Behavior
+https://codepen.io/hankchizljaw/pen/Vxpjvo
+https://autoprefixer.github.io/

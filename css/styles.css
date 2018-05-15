@@ -12,6 +12,26 @@ CSS CUSTOM PROPERTIES
 
 
 /****************************************************
+FONT
+****************************************************/
+
+/* OKOMITO REGULAR */
+@font-face {
+  font-family: 'okomito-regular';
+  src: url("../assets/fonts/okomito/okomito-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* OKOMITO MEDIUM */
+@font-face {
+  font-family: 'okomito-medium';
+  src: url("../assets/fonts/okomito/okomito-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/****************************************************
 CSS RESET & GlBAL SETTINGS
 ****************************************************/
 
@@ -37,9 +57,9 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'okomito-regular', sans-serif;
 	font-weight: 400;
-	font: inherit;
+	letter-spacing: 0.035rem;
 	vertical-align: baseline;
   box-sizing: border-box;
 }
@@ -79,9 +99,10 @@ DISPLAY
 }
 
 /* INLINE BLOCK */
-.d-ib {
-	display: inline-block;
-}
+.d-ib {	display: inline-block; }
+
+/* INLINE */
+.d-i { display: inline; }
 
 /****************************************************
 FLEXBOX CONTAINER
@@ -165,6 +186,7 @@ PADDING & MARGINS
 ****************************************************/
 
 /* TOP PADDING */
+.pt-035 { padding-top: 0.35rem; }
 .pt-1 { padding-top: 1rem; }
 .pt-2 { padding-top: 2rem;}
 
@@ -172,6 +194,7 @@ PADDING & MARGINS
 .pr-1 { padding-right: 1rem; }
 
 /* BOTTOM PADDING */
+.pb-035 { padding-bottom: 0.35rem; }
 .pb-1 { padding-bottom: 1rem; }
 .pb-2 { padding-bottom: 2rem; }
 
@@ -207,6 +230,23 @@ CUSTOM ELEMENT POSITIONING
   position: fixed;
   bottom: 0;
 }
+
+/* ONBOARDING HINT GROUP */
+.onboarding-hints {
+	position: relative;
+}
+
+/* ONBOARDING HINT TEXT */
+.onboarding-hint {
+	position: absolute;
+	top: 0%;
+	left: 0;
+}
+
+/* DISPLAY VISIBILITY */
+#rgb-display { visibility: visible; }
+#hex-display { visibility: hidden; }
+#hsl-display { visibility: hidden; }
 
 
 /****************************************************
@@ -252,6 +292,9 @@ button:active {
 TYPOGRAPHY
 ****************************************************/
 
+/* FONT FAMILY */
+.ff-bold { font-family: 'okomito-medium', sans-serif; }
+
 /* FONT SIZES */
 .fs-0875 { font-size: 0.875rem; }
 .fs-1 { font-size: 1rem; }
@@ -265,7 +308,8 @@ TYPOGRAPHY
 .fc-inherit { color: inherit; }
 
 /* LETTER SPACING */
-.ls-05 { letter-spacing: 0.05rem;v}
+.ls-05 { letter-spacing: 0.05rem; }
+.ls-1 { letter-spacing: 0.15rem; }
 
 /* TEXT ALIGNMENT */
 .t-ctr { text-align: center; }
@@ -294,22 +338,7 @@ a:hover {
 ONBOARDING HINTS
 ****************************************************/
 
-
-.onboarding-hints {
-	position: relative;
-	font-size: 0.875rem;	/* 14px */
-	letter-spacing: 0.5px;
-	width: 100%;
-}
-
-.onboarding-hint {
-	position: absolute;
-	top: 0%;
-	left: 0;
-	width: 100%;
-	text-align: center;
-}
-
+/* ONBOARDING HINT ANIMATION */
 .hint-text {
 	-webkit-transition: all var(--animation-duration) ease-in-out;
   -moz-transition: all var(--animation-duration) ease-in-out;
@@ -318,36 +347,17 @@ ONBOARDING HINTS
   transition: all var(--animation-duration) ease-in-out;
 }
 
-/* Spacebar hint */
+/* ONBOARDING OPACITY VALUES */
+/* MODIFIED WITH JAVASCRIPT */
 #spacebar-hint { opacity: 0; }
-/* Left Key Hint */
 #leftkey-hint { opacity: 0; }
-/* Right Key Hint */
 #rightkey-hint { opacity: 0; }
 
-.hide {
-	visibility: hidden;
-}
-
-/* Span class for making text look like a key */
+/* BORDER STYLE FOR KEYBOARD EFFECT */
 .key-tip {
 	border: 2px solid;
-	padding: 0.25rem 0.75rem;
 	border-radius: 0.5rem;
 }
-
-
-/******************************
-MAIN DISPLAY LIST
-******************************/
-
-ul { }
-
-li { display: inline; }
-
-#rgb-display { visibility: visible; }
-#hex-display { visibility: hidden; }
-#hsl-display { visibility: hidden; }
 
 
 /****************************************************
