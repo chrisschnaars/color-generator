@@ -40,28 +40,28 @@
 
             <!-- SITE TITLE | FLEX ITEM 2.1 -->
             <div class="pl-1 pr-1 f-flex-1">
-              <h1 class="fc-inherit fs-0875 fw-700 t-caps ls-1">Color Generator</h1>
+              <h1 class="fc-inherit fs-3 fw-700 caps ls-1">Color Generator</h1>
             </div>
 
             <!-- ONBOARDING TIPS | FLEX ITEM 2.2 -->
             <div class="pl-1 pr-1 f-flex-2">
-              <div class="onboarding-hints">
-                <div class="w-100 onboarding-hint">
-                  <p class="hint-text t-ctr" id="spacebar-hint"><span class="key-tip pt-035 pr-1 pb-035 pl-1">Spacebar</span>&nbsp;&nbsp;will generate a new color.</p>
+              <div class="relative">
+                <div class="w-100 absolute top-0">
+                  <p class="hint-text center" id="spacebar-hint"><span class="border rounded pt-035 pr-1 pb-035 pl-1">Spacebar</span>&nbsp;&nbsp;will generate a new color.</p>
                 </div>
-                <div class="w-100 onboarding-hint">
-                  <p class="hint-text t-ctr" id="leftkey-hint"><span class="key-tip pt-035 pr-1 pb-035 pl-1">&larr;</span>&nbsp;&nbsp;to see the previous color.</p>
+                <div class="w-100 absolute top-0">
+                  <p class="hint-text center" id="leftkey-hint"><span class="border rounded pt-035 pr-1 pb-035 pl-1">&larr;</span>&nbsp;&nbsp;to see the previous color.</p>
                 </div>
-                <div class="w-100 onboarding-hint">
-                  <p class="hint-text t-ctr" id="rightkey-hint"><span class="key-tip pt-035 pr-1 pb-035 pl-1">&rarr;</span>&nbsp;&nbsp;to go forward.</p>
+                <div class="w-100 absolute top-0">
+                  <p class="hint-text center" id="rightkey-hint"><span class="border rounded pt-035 pr-1 pb-035 pl-1">&rarr;</span>&nbsp;&nbsp;to go forward.</p>
                 </div>
               </div>
             </div>
 
             <!-- INFO BUTTON | FLEX ITEM 2.3 -->
             <div class="pl-1 pr-1 f-flex-1">
-              <div id="help-btn" class="t-rt">
-                <p class="fs-0875"><a class="fc-inherit" href="https://github.com/chrisschnaars/color-generator">Info</a></p>
+              <div id="help-btn" class="right-align">
+                <p class="fs-3"><a class="fc-inherit" href="https://github.com/chrisschnaars/color-generator">Info</a></p>
               </div>
             </div>
 
@@ -72,20 +72,20 @@
         <!-- COLOR DISPLAY | FLEX ITEM 1.2 -->
         <div id="display" class="w-100 f-flex-1 f f-flow-2 ">
           <div>
-            <ul class="w-100 t-ctr mode-display" id="rgb-display">
-                <li id="red-display" class="d-i ff-bold fc-inherit fs-6 ml-1 mr-1"></li>
-                <li id="green-display" class="d-i ff-bold fc-inherit fs-6 ml-1 mr-1"></li>
-                <li id="blue-display" class="d-i ff-bold fc-inherit fs-6 ml-1 mr-1"></li>
+            <ul class="w-100 center absolute" id="rgb-display">
+                <li id="red-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
+                <li id="green-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
+                <li id="blue-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
             </ul>
 
-            <ul class="w-100 t-ctr mode-display" id="hex-display">
-                <li id="hex-value-display" class="d-i ff-bold fc-inherit fs-6 t-caps ml-1 mr-1"></li>
+            <ul class="w-100 center absolute" id="hex-display">
+                <li id="hex-value-display" class="inline bold fc-inherit fs-1 caps ml-1 mr-1"></li>
             </ul>
 
-            <ul class="w-100 t-ctr mode-display" id="hsl-display">
-                <li id="hue-display" class="d-i ff-bold fc-inherit fs-6 ml-1 mr-1"></li>
-                <li id="saturation-display" class="d-i ff-bold fc-inherit fs-6 ml-1 mr-1"></li>
-                <li id="lightness-display" class="d-i ff-bold fc-inherit fs-6 ml-1 mr-1"></li>
+            <ul class="w-100 center absolute" id="hsl-display">
+                <li id="hue-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
+                <li id="saturation-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
+                <li id="lightness-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
             </ul>
           </div>
         </div>
@@ -94,44 +94,44 @@
         <!-- COLOR CONTROL BAR | FLEX ITEM 1.3 -->
         <div class="w-100 f-flex-1">
           <!-- FLEX CONTAINER 3 -->
-          <div id="control-bar" class="w-100 pt-2 pb-1 f f-flow-2 f-jc-1">
+          <div class="fixed bottom-0 w-100 pt-2 pb-1 f f-flow-2 f-jc-1">
 
             <!-- COLOR DISPLAY MODE SELECTOR | FLEX ITEM 3.1 -->
             <div class="pl-1 pr-1 f-flex-1">
 
               <button id="rgb-selector" type="button" class="btn-default btn-selected f-left pt-1 pr-1 pb-1 pl-1">
-                <p class="fs-1">RGB</p>
+                <p class="fs-2">RGB</p>
               </button>
 
               <button id="hex-selector" type="button" class="btn-default f-left pt-1 pr-1 pb-1 pl-1">
-                <p class="fs-1">HEX</p>
+                <p class="fs-2">HEX</p>
               </button>
 
               <button id="hsl-selector" type="button" class="btn-default f-left pt-1 pr-1 pb-1 pl-1">
-                <p class="fs-1">HSL</p>
+                <p class="fs-2">HSL</p>
               </button>
             </div>
 
             <!-- RGB SLIDERS | FLEX ITEM 3.2 -->
             <div class="pl-1 pr-1 f-flex-2">
-              <div class="m-0-auto t-ctr">
+              <div class="m-0-auto center">
 
-                <div class="pl-1 pr-1 d-ib">
+                <div class="pl-1 pr-1 inline-block">
                   <label for="red-control">Red <span id="red-slider-display"></span></label>
                   <br>
-                  <input type="range" id="red-control" placeholder="Red" value="255" min="0" max="255" tabindex="0"></input>
+                  <input type="range" id="red-control" class="pt-1 pb-1" placeholder="Red" value="255" min="0" max="255" tabindex="0"></input>
                 </div>
 
-                <div class="pl-1 pr-1 d-ib">
+                <div class="pl-1 pr-1 inline-block">
                   <label for="green-control">Green <span id="green-slider-display"></span></label>
                   <br>
-                  <input type="range" id="green-control" placeholder="Green" value="0" min="0" max="255" tabindex="0"></input>
+                  <input type="range" id="green-control" class="pt-1 pb-1" placeholder="Green" value="0" min="0" max="255" tabindex="0"></input>
                 </div>
 
-                <div class="pl-1 pr-1 d-ib">
+                <div class="pl-1 pr-1 inline-block">
                   <label for="blue-control">Blue <span id="blue-slider-display"></span></label>
                   <br>
-                  <input type="range" id="blue-control" placeholder="Blue" value="255" min="0" max="255" tabindex="0"></input>
+                  <input type="range" id="blue-control" class="pt-1 pb-1" placeholder="Blue" value="255" min="0" max="255" tabindex="0"></input>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@
           <!-- Copy CSS Button -->
           <div class="pl-1 pr-1 f-flex-1">
             <button id="copy-css-btn" type="button" class="btn-default pt-1 pr-1 pb-1 pl-1 f-right">
-              <p class="fs-1">Copy CSS</p>
+              <p class="fs-2">Copy CSS</p>
             </button>
           </div>
 

@@ -35,6 +35,7 @@ var blueSliderDisplay = document.getElementById('blue-slider-display');
 // Copy CSS Button
 var copyBtn = document.getElementById('copy-css-btn');
 
+
 // ****************************************************
 // GLOBAL VARIABLES
 // ****************************************************
@@ -166,6 +167,7 @@ clipboard.on('error', function(e) {
 // ONBOARDING DISPLAY
 // ****************************************************
 
+// INCREMENT ONBOARDING TIPS
 function onboarding() {
 	var s = document.getElementById('spacebar-hint');	// spacebar hint
 	var l = document.getElementById('leftkey-hint');	// left arrow hint

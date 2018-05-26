@@ -19,18 +19,24 @@ Learned:
 - arrays
 - handling basic libraries
 
+Tools to try:
+- webopack
+- grunt
+- gulp
+
 Issues
 - slider styling
 - another text color if neither white nor black is > 4.5
 
 To Do:
 - Responsive
+  - responsive display type size
 - Copy CSS confirmation
-- typography css
-- slider styling
 - display centering bug
 - onboarding hint transition font color bug
-- increase margin between slider and label
+- transition between color changes
+- mode selection not dependent on ids? (add/remove 'hidden' class)
+
 
 - CSS Lint
 - JS Lint

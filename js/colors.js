@@ -122,7 +122,9 @@ function displayNextColor() {
 
 		// INCREASE COLOR ARRAY INDEX
 		colorsIndex++;
+
 	}
+  
 }
 
 
@@ -138,7 +140,7 @@ function updateMode(mode) {
 
 			// GET SELECTOR DOM ELEMENT FOR EACH MODE
 			var l = document.getElementById(modes[i] + '-selector');	// radio label
-			// GET COLOR READOUT DOM ELEMENT FOR EACH MODE
+			// GET COLOR DISPLAY DOM ELEMENT FOR EACH MODE
 			var d = document.getElementById(modes[i] + '-display')
 
       // LOOP THROUGH MODES TO FIND WHAT WAS SELECTED

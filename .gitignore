@@ -6,6 +6,11 @@
 assets/
 steps.txt
 
+# basscss #
+######################
+node_modules/
+package-lock.json
+
 # OS generated files #
 ######################
 .DS_Store

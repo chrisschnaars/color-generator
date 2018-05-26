@@ -28,6 +28,14 @@ window.addEventListener('keydown', function(event) {
 		if (!spacebarUsed && onboardStep === 1) {
 			onboarding();
 		}
+
+		// HIDE FORWARD ONBOARDING HINT IF THIS IS FIRST TIME
+		if (!rightkeyUsed && onboardStep === 3) {
+			onboarding();
+		}
+
+		console.log(onboardStep);
+
 	}
 
 	// LEFT ARROW DISPLAYS PREVIOUS COLOR IN ARRAY
