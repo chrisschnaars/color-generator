@@ -20,7 +20,7 @@ Learned:
 - handling basic libraries
 
 Tools to try:
-- webopack
+- webpack
 - grunt
 - gulp
 

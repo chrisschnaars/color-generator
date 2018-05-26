@@ -100,6 +100,7 @@ POSITIONING
 /* ANCHORING */
 .top-0 { top: 0; }
 .right-0 { right: 0; }
+.right-1 { right: 2.5rem; }
 .bottom-0 { bottom: 0; }
 .left-0 { left: 0; }
 
@@ -282,6 +283,7 @@ button:hover {
 button:active {
 	outline: none;
 	background-color: var(--button-color-active);
+	transform: scale(0.99);
 }
 
 /* ACTIVE CLASS FOR THE SELECTED BUTTON */
@@ -329,6 +331,20 @@ a {
 a:hover {
 	border: none;
 }
+
+/****************************************************
+OPACITY ANIMATION
+****************************************************/
+
+.opacity-0-animate {
+	opacity: 0;
+	-webkit-transition: all var(--animation-duration) linear;
+    -moz-transition: all var(--animation-duration) linear;
+    -o-transition: all var(--animation-duration) linear;
+    transition: all var(--animation-duration) linear;
+}
+
+.opacity-1 { opacity: 1; }
 
 
 /****************************************************

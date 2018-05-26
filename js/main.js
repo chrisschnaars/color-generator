@@ -4,36 +4,37 @@
 // ****************************************************
 
 // BACKGROUND DISPLAY ELEMENT
-var pageContainer = document.querySelector('.container');
+const pageContainer = document.querySelector('.container');
 
 // RGB DISPLAY ELEMENTS
-var rgbColorDisplay = document.getElementById('rgb-display');
-var redDisplay = document.getElementById('red-display');
-var greenDisplay = document.getElementById('green-display');
-var blueDisplay = document.getElementById('blue-display');
+const rgbColorDisplay = document.getElementById('rgb-display');
+const redDisplay = document.getElementById('red-display');
+const greenDisplay = document.getElementById('green-display');
+const blueDisplay = document.getElementById('blue-display');
 
 // HEX DISPLAY ELEMENTWS
-var hexColorDisplay = document.getElementById('hex-display');
-var hexDisplay = document.getElementById('hex-value-display');
+const hexColorDisplay = document.getElementById('hex-display');
+const hexDisplay = document.getElementById('hex-value-display');
 
 // HSL DISPLAY ELEMENTS
-var hslColorDisplay = document.getElementById('hsl-display');
-var hueDisplay = document.getElementById('hue-display');
-var satDisplay = document.getElementById('saturation-display');
-var lightDisplay = document.getElementById('lightness-display');
+const hslColorDisplay = document.getElementById('hsl-display');
+const hueDisplay = document.getElementById('hue-display');
+const satDisplay = document.getElementById('saturation-display');
+const lightDisplay = document.getElementById('lightness-display');
 
 // RGB SLIDER CONTROLS
-var redSlider = document.getElementById('red-control');
-var greenSlider = document.getElementById('green-control');
-var blueSlider = document.getElementById('blue-control');
+const redSlider = document.getElementById('red-control');
+const greenSlider = document.getElementById('green-control');
+const blueSlider = document.getElementById('blue-control');
 
 // RGB SLIDER READOUTS
-var redSliderDisplay = document.getElementById('red-slider-display');
-var greenSliderDisplay = document.getElementById('green-slider-display');
-var blueSliderDisplay = document.getElementById('blue-slider-display');
+const redSliderDisplay = document.getElementById('red-slider-display');
+const greenSliderDisplay = document.getElementById('green-slider-display');
+const blueSliderDisplay = document.getElementById('blue-slider-display');
 
 // Copy CSS Button
-var copyBtn = document.getElementById('copy-css-btn');
+const statusElement = document.querySelector('[role="status"]');
+const copyBtn = document.getElementById('copy-css-btn');
 
 
 // ****************************************************
@@ -156,6 +157,8 @@ var clipboard = new Clipboard('#copy-css-btn', {
 
 clipboard.on('success', function(e) {
 		console.log(e);
+		revealConfirmation();
+		setTimeout(hideConfirmation, 1000);
 });
 
 clipboard.on('error', function(e) {

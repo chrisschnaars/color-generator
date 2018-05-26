@@ -116,3 +116,20 @@ function setButtonStyles() {
 	document.documentElement.style.setProperty('--button-color-hover', 'rgba(' + cc + ', ' + a2 + ')')
 	document.documentElement.style.setProperty('--button-color-active', 'rgba(' + cc + ', ' + a3 + ')')
 }
+
+// ****************************************************
+// REVEAL AND HIDE CONFIRMATION TEXT
+// ****************************************************
+
+function revealConfirmation() {
+	console.log("show text now");
+	// statusElement.innerHTML = 'Copied!';
+	statusElement.classList.add('opacity-1');
+
+}
+
+function hideConfirmation() {
+	console.log("hide text now");
+	// statusElement.innerHTML = '';
+	statusElement.classList.remove('opacity-1');
+}
