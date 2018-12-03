@@ -1,12 +1,6 @@
 COLOR GENERATOR
 A simple tool for finding colors.
 
-
-Potential Features
-- Text input of color values? (click on color value and change it...)
-
-Fixes Needed:
-
 Challenges Along the Way:
 - keyCode is being deprecated. find alternatives.
 - conversion algorithm not totally accurate
@@ -24,23 +18,18 @@ Tools to try:
 - grunt
 - gulp
 
-Issues
-- slider styling
+Issues:
 - another text color if neither white nor black is > 4.5
+- color generator title should appear for non-touch on small screens
 
 To Do:
-- Responsive
-  - responsive display type size
-- Copy CSS confirmation
-- display centering bug
-- onboarding hint transition font color bug
-- transition between color changes
-- mode selection not dependent on ids? (add/remove 'hidden' class)
-
-
+- webpack (or some other way to combine files)
+- browser testing
 - CSS Lint
 - JS Lint
 - JS Test
+- update readme
+
 
 Process:
 1. Generate random color values

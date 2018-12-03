@@ -1,0 +1,104 @@
+// CONFIG
+// ALL VARIABLES AND SETUP STYLES
+
+
+// ===========================================
+// FONT FACE
+// ===========================================
+
+/* GOTHAM BOOK */
+@font-face {
+  font-family: 'gotham-book';
+  src: url("../assets/fonts/gotham/gotham-book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* GOTHAM BOLD */
+@font-face {
+  font-family: 'gotham-bold';
+  src: url("../assets/fonts/gotham/gotham-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// ===========================================
+// TYPE VARIABLES
+// ===========================================
+
+// FONTS
+$gotham-bold:         "gotham-bold", sans-serif;
+$gotham-book:         "gotham-book", sans-serif;
+
+// BASE FONT SIZE
+$base-font-size:        16px !default;
+
+// TYPE SIZE GRAPH
+$small-font:            0.875rem !default; // 14px
+$medium-font:           1rem !default; // 16px
+$fs-14:                 0.875rem !default; // 14px
+$fs-48:                 3rem !default; // 64px
+$fs-72:                 4.5rem !default; // 72px
+$fs-96:                 6rem !default;  // 96px
+$fs-104:                6.5rem !default;  // 96px
+$fs-112:                7rem !default; // 128px
+
+// LINE HEIGHT
+$small-line-height:     calc(20/14) !default;
+$base-line-height:      1.5 !default;
+$display-line-height:   1 !default;
+
+// LETTER SPACING
+$wide-letter-spacing:   0.12rem !default;
+
+
+
+// ===========================================
+// COLOR
+// ===========================================
+
+// grays
+$white:                 #FFFFFF !default;
+$light-gray:            #F8F9FA !default;
+$dark-gray:             #A9A9A9 !default;
+$black:                 #212529 !default;
+// color
+$primary-color:         #0167FF !default; // BLUE  4A90E2
+$primary-color-hover:   #004CFF !default;  // DARKER HUE OF BLUE
+
+// SET INITIAL COLOR PROPERTIES
+:root {
+  --button-color-default: rgba(255, 255, 255, 0);
+	--button-color-hover: rgba(255, 255, 255, 0);
+	--button-color-active: rgba(150, 150, 150, 50);
+}
+
+// ===========================================
+// SPACING
+// ===========================================
+
+// Spacing Unites
+$spacing-unit:          0.5rem !default;  // 8px grid increments
+
+
+// ===========================================
+// ANIMATION DURATION
+// ===========================================
+
+// Spacing Unites
+$animate-time-fast:     0.20s !default;
+$animate-time-slow:     0.35s !default;
+
+
+// ===========================================
+// RESPONSIVE
+// ===========================================
+
+// Breakpoints
+$bp-32:                 32rem !default; // 512px
+$bp-34:                 34rem !default; // 544px
+$bp-40:                 40rem !default;
+$bp-48:                 47.5rem !default; // 760px
+$bp-57:                 57rem !default; // 960px
+$bp-64:                 64rem !default; // 1024px
+$bp-69:                 69rem !default; // 1104px

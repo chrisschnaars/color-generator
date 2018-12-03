@@ -1,0 +1,310 @@
+// MIXINS
+// GLOBAL REPO OF MIXINS
+
+
+// ===========================================
+// FLEXBOX MIXINS
+// ===========================================
+
+// FLEXBOX DISPLAY
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// FLEX FLOW
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+@mixin flex-flow($flow) {
+  -webkit-flex-flow: $flow;
+     -moz-flex-flow: $flow;
+      -ms-flex-flow: $flow;
+          flex-flow: $flow;
+}
+
+// JUSTIFY CONTENT
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+     -moz-justify-content: $justify;
+      -ms-justify-content: $justify;
+          justify-content: $justify;
+            -ms-flex-pack: $justify;
+}
+
+// FLEX
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+     -moz-box-flex: $values;
+      -webkit-flex: $values;
+  	  -ms-flex: $values;
+  	      flex: $values;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;
+     -moz-box-ordinal-group: $val;
+  	     -ms-flex-order: $val;
+  	      -webkit-order: $val;
+  		      order: $val;
+}
+
+
+// ===========================================
+// SPACING, SIZING AND POSITIONING
+// ===========================================
+
+@mixin full-width() {
+  width: 100%;
+  max-width: 100%;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $spacing-unit * $top;
+  padding-right: $spacing-unit * $right;
+  padding-bottom: $spacing-unit * $bottom;
+  padding-left: $spacing-unit * $left;
+}
+
+@mixin container-padding ($value) {
+  padding-top: $spacing-unit * $value;
+  padding-bottom: $spacing-unit * $value;
+}
+
+@mixin component-padding($value) {
+  padding-left: $spacing-unit * $value;
+  padding-right: $spacing-unit * $value;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// ===========================================
+// TRANSITIONS AND TRANSFORMATIONS
+// ===========================================
+
+// TRANSITIONS
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+
+// ===========================================
+// DESIGN & STYLE
+// ===========================================
+
+// BORDER RADIUS
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+
+// SHADOW
+@mixin shadow($shadow-size, $shadow-blur, $shadow-color) {
+  box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%);
+}
+
+
+// ===========================================
+// MEDIA QUERIES
+// ===========================================
+
+// Use media queries like this:
+// @include media-query($on-palm) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+// ===========================================
+// SLIDER
+// ===========================================
+
+// DRAG HANDLE
+$thumb-color: var(--button-color-active) !default;
+$thumb-radius: 1.25rem !default;
+$thumb-height: 1.125rem !default;
+$thumb-width: 1.125rem !default;
+$thumb-border-width: 1px !default;
+$thumb-border-color: currentColor !default;
+$thumb-shadow-size: 0.25rem !default;
+$thumb-shadow-blur: 1px !default;
+$thumb-shadow-color: rgba(0, 0, 0, 0) !default;
+
+// RANGE
+$track-color: var(--button-color-hover) !default;
+$track-radius: 0.25rem !default;
+$track-height: 0.25rem !default;
+$track-border-width: 0 !default;
+$track-border-color: transparent !default;
+$track-shadow-size: 0 !default;
+$track-shadow-blur: 0 !default;
+$track-shadow-color: rgba(0, 0, 0, 0) !default;
+
+@mixin track-width($width, $min-width, $max-width) {
+  width: $width;
+  min-width: $min-width;
+  max-width: $max-width;
+
+  &::-webkit-slider-runnable-track {
+    width: $width;
+    min-width: $min-width;
+    max-width: $max-width;
+  }
+
+  &::-moz-range-track {
+    width: $width;
+    min-width: $min-width;
+    max-width: $max-width;
+  }
+
+  &::-ms-track {
+    width: $width;
+    min-width: $min-width;
+    max-width: $max-width;
+  }
+}
+
+@mixin track {
+  height: $track-height;
+  cursor: pointer;
+  animation: 0.2s;
+}
+
+@mixin thumb-size() {
+  &::-webkit-slider-thumb {
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+  }
+  &::-moz-range-thumb {
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+  }
+  &::-ms-thumb {
+    width: $thumb-width;
+    border-radius: $thumb-radius;
+  }
+  &::-ms-track {
+    border-width: $thumb-width 0;
+  }
+}
+
+@mixin thumb {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  height: $thumb-height;
+  cursor: pointer;
+  border: $thumb-border-width solid $thumb-border-color;
+  background: $thumb-color;
+  position: relative;
+  margin-top: -.45rem;
+}
+
+@mixin input-type-range {
+  color: inherit;
+  -webkit-appearance: none;
+  background: transparent;
+
+  &:focus {
+    // outline: none;
+
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+    background: $track-color;
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    -webkit-appearance: none;
+    margin-top: ((-#{$track-border-width} * 2) + $track-height) / (2 - $thumb-height / 2);
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: $track-color;
+  }
+
+  &::-moz-range-track {
+    @include track;
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius;
+    background: $track-color;
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-track {
+    @include track;
+    color: transparent;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  &::-ms-fill-lower {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+    background: $track-color;
+  }
+
+  &::-ms-fill-upper {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+    background: $track-color;
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+  }
+
+  &:focus::-ms-fill-lower {
+    background: $track-color;
+  }
+
+  &:focus::-ms-fill-upper {
+    background: $track-color;
+  }
+}

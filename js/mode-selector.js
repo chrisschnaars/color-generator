@@ -1,47 +1,39 @@
-//-----------------------------------------------------------
-//  MODE SELECTOR WIDGET
-//-----------------------------------------------------------
+/****************************************************
+MODE SELECTOR WIDGET
+CONTROLLING THE DISPLAY OF EACH COLOR MODE
+****************************************************/
 
 
-// SETUP COLOR MODE SELECTOR
-var modeSelector = document.getElementById('mode-selector')
+// UPDATE MODE DISPLAY BASED ON USER SELECTION
+function updateMode(mode) {
 
-// CHANGE EVENT LISTENER
-modeSelector.addEventListener('change', updateMode);
+	// console.log("set active mode to " + mode);
 
+	// LOOP THROUGH MODES ARRAY AND SELECT/DESELECT AS NEEDED
+	for (var i = 0; i < modes.length; i++) {
 
-// CHANGE COLOR DISPLAY MODE ON CLICK
-function updateMode() {
+			// DOM ELEMENT FOR EACH MODE DISPLAY
+			var d = document.getElementById(modes[i] + '-display')
+			// DOM ELEMENT FOR EACH MODE BUTTON
+			var l = document.getElementById(modes[i]);
 
-	// FIND CURRENT MODE
-	var m;
-	if (document.getElementById('rgb').checked) {
-		m = 'rgb';
-	} else if (document.getElementById('hex').checked) {
-		m = 'hex';
-	} else {
-		m = 'hsl';
-	}
-
-	// CHNAGE MODE DISPLAY BASED ON SELECTED MODE
-	if (m === 'rgb') {
-		// hide others
-		hexColorDisplay.style.visibility = 'hidden';
-		hslColorDisplay.style.visibility = 'hidden';
-		// show rgb
-		rgbColorDisplay.style.visibility = 'visible';
-	} else if (m === 'hex') {
-		console.log("true hex");
-		// hide others
-		rgbColorDisplay.style.visibility = 'hidden';
-		hslColorDisplay.style.visibility = 'hidden';
-		// show hex
-		hexColorDisplay.style.visibility = 'visible';
-	} else if (m === 'hsl') {
-		// hide others
-		rgbColorDisplay.style.visibility = 'hidden';
-		hexColorDisplay.style.visibility = 'hidden';
-		// show rgb
-		hslColorDisplay.style.visibility = 'visible';
-	}
+      // LOOP THROUGH MODES TO FIND WHAT WAS SELECTED
+			if (mode === modes[i]) {
+        // FOR THE SELECTED MODE
+				// TOGGLE CORRESPONDING DISPLAY TO DISPLAY
+				d.classList.add('active-display');
+				// ADD SELECTED CLASS
+				l.classList.add('btn-selected');
+				// SET AS ACTIVE
+				activeMode = modes[i];
+			} else {
+        // FOR THE UNSELECTED MODES
+				// HIDE THEIR DISPLAY
+				d.classList.remove('active-display');
+				// REMOVE SELECTED CLASS
+				l.classList.remove('btn-selected');
+				// ADD UNSELECTED CLASS
+				// l.classList.add('unselected-link');
+			}
+		}
 }

@@ -1,0 +1,226 @@
+// LAYOUT
+// MAIN SITE WIREFRAME ELEMENTS
+
+
+// FULL WIDTH AND HEIGHT CONTAINER
+// THIS IS WHAT CHANGES COLOR
+.page-container {
+  // LAYOUT
+  @include full-width;
+  @include transition(background-color $animate-time-fast linear);
+}
+
+// CONTAINER FOR ALL UI ELEMENTS
+.ui-container {
+  // LAYOT
+  @include full-width;
+  height: 100vh;
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  @include justify-content(space-between);
+}
+
+
+// ===========================================
+// HEADER
+// ===========================================
+
+// HEADER ELEMENT
+header {
+  // LAYOUT
+  width: 100%;
+  @include container-padding(4);
+  // FLEX ITEM STYLES
+  @include flex(0);
+  // RESPONSIVE
+  @include media-query($bp-32) {
+    @include container-padding(3);
+    @include justify-content(center);
+  }
+}
+
+// CONTAINER FOR ALL HEADER ELEMENTS
+div.meta-container {
+  // APPEARANCE
+  opacity: 0;
+  @include transition(opacity $animate-time-slow linear);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(space-between);
+  // RESPONSIVE
+  @include media-query($bp-32) {
+    @include justify-content(center);
+  }
+}
+
+// CONTENT CONTAINER INSIDE HEADER
+div.logo-container, div.info-container {
+  // LAYOUT
+  @include component-padding(4);
+  height: fit-content;
+  width: fit-content;
+  // FLEX ITEM STYLES
+  @include flex(0 1 auto);
+}
+
+// GITHUB/INFO LINK CONTAINER
+div.info-container {
+  @include media-query(32rem) {
+    display: none;
+  }
+}
+
+
+// ===========================================
+// ONBOARDING DISPLAY
+// ===========================================
+
+// CONTAINER FOR ALL ONBOARDING TIPS
+div.onboarding-container {
+  // LAYOUT
+  @include component-padding(2);
+  position: absolute;
+  top: $spacing-unit * 4;
+  width: 100%;
+  // RESPONSIVE
+  @include media-query($bp-32) {
+    top: $spacing-unit * 3;
+  }
+}
+
+// CONTAINER FOR EACH ONBOARDING TIP
+div.onboading-tip, div.mobile-onboading-tip {
+  // LAYOUT
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  // APPEARANCE
+  opacity: 0;
+  text-align: center;
+  @include transition(opacity $animate-time-slow ease-in-out);
+}
+
+
+// ===========================================
+// COLOR DISPLAY
+// ===========================================
+
+// MAIN CONTAINER FOR COLOR DISPLAY
+div.display {
+  // LAYOUT
+  @include full-width;
+  @include container-padding(4);
+  // FLEX ITEM STYLES
+  @include flex(1);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+}
+
+// FLEX ITEM CONTAINER FOR ALL COLOR DISPLAYS
+div.display-container {
+  // FLEX ITEM STYLES
+  @include flex(1);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+}
+
+// ===========================================
+// FOOTER / CONTROL BAR
+// ===========================================
+
+// CONTAINER FOR ALL CONTROL BAR ELEMENTS
+div.controls-container {
+  // LAYOUT
+  @include full-width;
+  // padding: $spacing-unit*4 0;
+  // FLEX ITEM STYLES
+  @include flex(0);
+}
+
+// CONTAINER FOR ALL CONTROLS ON LARGER SCREENS / MOBILE PANEL
+div.settings-container {
+  // LAYOUT
+  @include full-width;
+  @include container-padding(4);
+  @include component-padding(4);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(space-evenly);
+  // @include media-query($bp-64) {
+  //   @include justify-content(space-evenly);
+  // }
+  // RESPONSIVE
+  @include media-query($bp-48) {
+    @include flex-flow(row wrap);
+    @include justify-content(space-between);
+  }
+  @include media-query($bp-32) {
+    @include component-padding(2);
+    background-color: var(--button-color-default);
+    display: none;
+  }
+}
+
+// COLOR MODES & COPY BUTTON CONTAINERS
+div.color-modes-container, div.copy-container {
+  // LAYOUT
+  // @include component-padding(4);
+  max-width: fit-content;
+  // FLEX ITEM STYLES
+  @include flex(1 0 auto);
+}
+
+// CONTAINER FOR ALL SLIDERS
+div.sliders {
+  // FLEX ITEM STYLES
+  @include flex(1 0 auto);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(center);
+  // RESPONSIVE
+  @include media-query($bp-48) {
+    @include flex (1 0 100%);
+    @include order(-1);
+    padding-bottom: 3rem;
+    @include justify-content(space-between);
+  }
+}
+
+// CONTAINER FOR EACH INDIVIDUAL SLIDER
+div.slider-container {
+  // LAYOUT
+  @include component-padding(2);
+  width: 100%;
+  max-width: fit-content;
+  // FLEX ITEM STYLES
+  @include flex(1 0 0);
+  // RESPONSIVE
+  @include media-query($bp-48) {
+    @include component-padding(0.5);
+  }
+}
+
+div.copy-confirm {
+  // LAYOUT
+  position: absolute;
+  text-align: center;
+  top: 0;
+  margin-bottom: $spacing-unit;
+  // APPERANCE
+  opacity: 0;
+  @include transition(opacity $animate-time-fast ease-in-out)
+}
+
+// SETTINGS BUTTON ON MOBILE
+button.settings-toggle {
+  width: 100%;
+}

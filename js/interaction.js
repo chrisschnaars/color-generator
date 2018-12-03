@@ -1,3 +1,8 @@
+/****************************************************
+INTERACTION
+SETTING UP ALL INTERACTIVE EVENTS
+****************************************************/
+
 
 // ****************************************************
 // KEYPRESS EVENTS
@@ -29,13 +34,10 @@ window.addEventListener('keydown', function(event) {
 			onboarding();
 		}
 
-		// HIDE FORWARD ONBOARDING HINT IF THIS IS FIRST TIME
+		// HIDE RIGHT KEY TIP IF USER CREATES NEW COLOR
 		if (!rightkeyUsed && onboardStep === 3) {
 			onboarding();
 		}
-
-		console.log(onboardStep);
-
 	}
 
 	// LEFT ARROW DISPLAYS PREVIOUS COLOR IN ARRAY
@@ -68,24 +70,37 @@ window.addEventListener('keydown', function(event) {
 // MOUSE EVENTS
 // ****************************************************
 
-function setupMouseEvents() {
+function setupListeners(type) {
 
-  // CLICK EVENTS FOR MODE SELECTORS
-  document.querySelector('#rgb-selector').addEventListener('click', function(){
-  	updateMode('rgb');
-  }, false);
+	// RGB SLIDERS
+	document.querySelector('.sliders').addEventListener('input', function(e) {
+	  // console.log(e.target.id + " was clicked!");
+		updateColors();
+	});
 
-  document.querySelector('#hex-selector').addEventListener('click', function(){
-  	updateMode('hex');
-  }, false);
+	// MODE SELECTORS
+	document.querySelector('.color-modes-container').addEventListener(type, function(e) {
+		// console.log(e.target.id + "was clicked!");
+		updateMode(e.target.id);
+	}, false)
 
-  document.querySelector('#hsl-selector').addEventListener('click', function(){
-  	updateMode('hsl');
-  }, false);
+	// COPY BUTTON
+	document.querySelector('#copy-css-btn').addEventListener(type, copyColorValue ,false)
 
-  // RGB SLIDER CHANGE EVENTS
-  redSlider.addEventListener('input', updateColors);
-  greenSlider.addEventListener('input', updateColors);
-  blueSlider.addEventListener('input', updateColors);
+	// SETTINGS TOGGLE
+	document.querySelector('#settings-toggle').addEventListener(type, toggleSettings);
 
+	// TOUCH EVENT
+	if (type = 'touchstart') {
+
+		document.querySelector('.display').addEventListener('touchstart', function(event) {
+			// GENERATE COLOR
+			generateColor();
+
+			// ADVANCE ONBOARDING
+			if (mobileOnboardStep < 2) {
+				onboarding();
+			}
+		}, false);
+	}
 }

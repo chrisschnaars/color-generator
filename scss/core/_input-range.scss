@@ -1,0 +1,149 @@
+// RANGE/TRACK
+$track-color: var(--button-color-active) !default;
+$track-border-width: 0 !default;
+$track-border-color: transparent !default;
+$track-shadow-size: 0 !default;
+$track-shadow-blur: 0 !default;
+$track-shadow-color: rgba(0, 0, 0, 0) !default;
+
+// THUMB/DRAG HANDLE
+$thumb-color: currentColor !default;
+$thumb-border-width: 0 !default;
+$thumb-border-color: transparent !default;
+$thumb-shadow-size: 0.25rem !default;
+$thumb-shadow-blur: 1px !default;
+$thumb-shadow-color: rgba(0, 0, 0, 0) !default;
+
+
+@mixin input-range-track($width, $min-width, $max-width, $track-height, $track-radius) {
+  width: $width;
+  min-width: $min-width;
+  max-width: $max-width;
+  height: $track-height;
+  border-radius: $track-radius;
+  cursor: pointer;
+  animation: 0.2s;
+
+  color: inherit;
+  -webkit-appearance: none;
+  background: transparent;
+
+  &:focus {
+    // outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: $width;
+    min-width: $min-width;
+    max-width: $max-width;
+    height: $track-height;
+    border-radius: $track-radius;
+    cursor: pointer;
+    animation: 0.2s;
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    background: $track-color;
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: $track-color;
+  }
+
+  &::-moz-range-track {
+    width: $width;
+    min-width: $min-width;
+    max-width: $max-width;
+    height: $track-height;
+    border-radius: $track-radius;
+    cursor: pointer;
+    animation: 0.2s;
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    background: $track-color;
+  }
+
+  &::-ms-track {
+    width: $width;
+    min-width: $min-width;
+    max-width: $max-width;
+    height: $track-height;
+    border-radius: $track-radius;
+    cursor: pointer;
+    animation: 0.2s;
+    border-width: $thumb-width 0;
+    border-color: transparent;
+    background: transparent;
+  }
+
+  &::-ms-fill-lower {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+    background: $track-color;
+  }
+
+  &::-ms-fill-upper {
+    @include shadow($track-shadow-size, $track-shadow-blur, $track-shadow-color);
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-radius * 2;
+    background: $track-color;
+  }
+
+  &:focus::-ms-fill-lower {
+    background: $track-color;
+  }
+
+  &:focus::-ms-fill-upper {
+    background: $track-color;
+  }
+}
+
+@mixin input-range-thumb($thumb-width, $thumb-height, $thumb-radius) {
+  @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+  width: $thumb-width;
+  height: $thumb-height;
+  cursor: pointer;
+  border: $thumb-border-width solid $thumb-border-color;
+  border-radius: $thumb-radius;
+  background: $thumb-color;
+  position: relative;
+  margin-top: -.5rem;
+
+  &::-webkit-slider-thumb {
+    @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+    width: $thumb-width;
+    height: $thumb-height;
+    cursor: pointer;
+    border: $thumb-border-width solid $thumb-border-color;
+    border-radius: $thumb-radius;
+    background: $thumb-color;
+    position: relative;
+    margin-top: -.5rem;
+    -webkit-appearance: none;
+    margin-top: ((-#{$track-border-width} * 2) + $track-height) / (2 - $thumb-height / 2);
+  }
+
+  &::-moz-range-thumb {
+    @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+    width: $thumb-width;
+    height: $thumb-height;
+    cursor: pointer;
+    border: $thumb-border-width solid $thumb-border-color;
+    border-radius: $thumb-radius;
+    background: $thumb-color;
+    position: relative;
+    margin-top: -.5rem;
+  }
+
+  &::-ms-thumb {
+    @include shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color);
+    width: $thumb-width;
+    height: $thumb-height;
+    cursor: pointer;
+    border: $thumb-border-width solid $thumb-border-color;
+    border-radius: $thumb-radius;
+    background: $thumb-color;
+    position: relative;
+    margin-top: -.5rem;
+  }
+}

@@ -1,0 +1,170 @@
+// COMPONENTS
+// SMALLER SITE ELEMENTS
+
+
+// ===========================================
+// LINKS
+// ===========================================
+
+/* GLOBAL LINK STYLES */
+a {
+	text-decoration: none;
+	border-bottom: 1px solid;
+  color: inherit;
+}
+
+a:hover {
+	border: none;
+}
+
+// ===========================================
+// BORDER
+// ===========================================
+
+
+// ROUNDED BORDERS USED FOR BUTTON-LOOK
+// ON ONBOARDING TIPS
+.rounded-border {
+  // LAYOUT
+  @include padding(1, 2, 1, 2);
+  @include border-radius(0.5rem);
+  border: 1px solid;
+}
+
+// ===========================================
+// COLOR DISPLAY
+// ===========================================
+
+ul.color-display {
+  // LAYOUT
+  @include full-width;
+  @include component-padding(4);
+  position: absolute;
+  // APPEARANCE
+  text-align: center;
+  visibility: hidden;
+	text-transform: uppercase;
+  // FLEX ITEM STYLES
+  @include flex(0);
+	@include media-query($bp-32) {
+    @include component-padding(3);
+	}
+
+  li {
+    // LAYOUT
+    display: inline;
+    // APPEARANCE
+    @extend h2;
+  }
+}
+
+ul.active-display {
+  // APPEARANCE
+  visibility: visible;
+}
+
+
+// ===========================================
+// BUTTONS
+// ===========================================
+
+// DEFAULT BUTTON STYLES
+button {
+  // CORE STYLES
+  border: none;
+	font-family: inherit;
+	cursor: pointer;
+	color: inherit;
+	background-color: var(--button-color-default);
+  // LAYOUT
+  @include padding(1.75, 2, 1.75, 2);
+  // TRANSITIONS
+  @include transition(all $animate-time-slow linear);
+
+	@include media-query($bp-32) {
+    @include padding(1.75, 1.5, 1.75, 1.5);
+	}
+
+}
+
+// DEFAULT FOCUS STYLE
+button:focus {
+	outline: thin dotted;
+	background-color: var(--button-color-hover);
+}
+
+// DEFAULT HOVER STYLE
+button:hover {
+	background-color: var(--button-color-hover);
+}
+
+// DEFAULT ACTIVE STYLE
+button:active {
+	outline: none;
+	background-color: var(--button-color-active);
+	transform: scale(0.99);
+}
+
+// TOGGLE BUTTON MODIFICATION
+button.toggle {
+	min-width: 4rem;
+  float: left;
+}
+
+// ACTIVE CLASS FOR THE SELECTED BUTTON
+.btn-selected {
+	background-color: var(--button-color-hover);
+}
+
+button > * {
+  pointer-events: none;
+}
+
+// MOBILE SETTINGS BUTTON
+#settings-toggle {
+	// LAYOT
+  @include full-width;
+}
+
+// ===========================================
+// SLIDERS
+// ===========================================
+
+// RANGE SLIDER
+input[type=range] {
+	@include track-width(100%, 4rem, 8.125rem);
+	@include thumb-size();
+	@include input-type-range;
+
+	@include media-query($bp-57) {
+		@include track-width(100%, 4rem, 6rem);
+	}
+
+	@include media-query($bp-48) {
+		@include track-width(100%, 100%, 100%);
+		@include thumb-size();
+	}
+}
+
+// RGB SLIDER VALUE READOUT
+.display-readout {
+  margin-left: $spacing-unit / 2;
+}
+
+// ===========================================
+// ICONS
+// ===========================================
+
+.settings-icon {
+	// APPEARANCE
+	width: 16px;
+	margin: 0 $spacing-unit $spacing-unit/4 $spacing-unit;
+}
+
+.settings-icon-rotated {
+	transform: rotate(180deg);
+}
+
+svg path {
+	stroke: currentColor;
+}

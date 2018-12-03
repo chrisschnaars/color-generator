@@ -1,156 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	       <!-- Force latest available IE rendering engine and Chrome Frame (if installed) -->
-         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- TITLE AND DESCRIPTION  -->
+    <title>Color Generator</title>
+    <meta name="description" content="A tool to help you find your next favorite color.">
 
-        <title>Color Generator</title>
-        <meta name="description" content="Explore colors on the internet!">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
 
-        <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Javascript Files -->
+    <script src="js/color-generation.js"></script>
+    <script src="js/color-array.js"></script>
+    <script src="js/color-contrast.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/mobile-behavior.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/mode-selector.js"></script>
+    <script src="js/onboarding.js"></script>
+    <script src="js/copy-btn.js"></script>
 
-        <!-- Javascript Files -->
-        <script src="js/colors.js"></script>
-        <script src="js/utils.js"></script>
-        <script src="js/interaction.js"></script>
+    <!-- Clipboard JS -->
+    <script src="js/libs/clipboard.js-master/dist/clipboard.min.js"></script>
 
-        <!-- Clipboard JS -->
-        <script src="js/libs/clipboard.js-master/dist/clipboard.min.js"></script>
+  </head>
 
 
-        <!-- Google Fonts  -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+  <body>
 
-    </head>
-
-    <body>
+    <div class="page-container">
 
       <!-- FULL PAGE BACKGROUND | FLEX CONTAINER 1 -->
-      <div class="container w-100 h-100 f f-flow-1 f-jc-1">
+      <div class="ui-container">
 
-        <!-- HEADER BAR | FLEX ITEM 1.1 -->
-        <header class="w-100 f-flex-1">
+        <!-- FLEX ITEM 1.1  -->
+        <header>
 
-          <!-- FLEX CONTAINER 2 -->
-          <div class="pt-2 pb-2 f f-flow-2 f-jc-1">
+          <!-- | FLEX CONTAINER 2 -->
+          <div class="meta-container">
 
             <!-- SITE TITLE | FLEX ITEM 2.1 -->
-            <div class="pl-1 pr-1 f-flex-1">
-              <h1 class="fc-inherit fs-3 fw-700 caps ls-1">Color Generator</h1>
+            <div class="logo-container">
+              <h1>Color Generator</h1>
             </div>
 
-            <!-- ONBOARDING TIPS | FLEX ITEM 2.2 -->
-            <div class="pl-1 pr-1 f-flex-2">
-              <div class="relative">
-                <div class="w-100 absolute top-0">
-                  <p class="hint-text center" id="spacebar-hint"><span class="border rounded pt-035 pr-1 pb-035 pl-1">Spacebar</span>&nbsp;&nbsp;will generate a new color.</p>
-                </div>
-                <div class="w-100 absolute top-0">
-                  <p class="hint-text center" id="leftkey-hint"><span class="border rounded pt-035 pr-1 pb-035 pl-1">&larr;</span>&nbsp;&nbsp;to see the previous color.</p>
-                </div>
-                <div class="w-100 absolute top-0">
-                  <p class="hint-text center" id="rightkey-hint"><span class="border rounded pt-035 pr-1 pb-035 pl-1">&rarr;</span>&nbsp;&nbsp;to go forward.</p>
-                </div>
-              </div>
+            <!-- GITHUB LINK | FLEX ITEM 2.3 -->
+            <div id="help-btn" class="info-container">
+              <p>
+                <a href="https://github.com/chrisschnaars/color-generator">Info</a>
+              </p>
             </div>
-
-            <!-- INFO BUTTON | FLEX ITEM 2.3 -->
-            <div class="pl-1 pr-1 f-flex-1">
-              <div id="help-btn" class="right-align">
-                <p class="fs-3"><a class="fc-inherit" href="https://github.com/chrisschnaars/color-generator">Info</a></p>
-              </div>
-            </div>
-
           </div>
+
         </header>
 
+        <!-- ONBOARDING TIPS | FLEX ITEM 2.2 -->
+        <div class="onboarding-container">
 
-        <!-- COLOR DISPLAY | FLEX ITEM 1.2 -->
-        <div id="display" class="w-100 f-flex-1 f f-flow-2 ">
-          <div>
-            <ul class="w-100 center absolute" id="rgb-display">
-                <li id="red-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
-                <li id="green-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
-                <li id="blue-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
-            </ul>
+          <div class="onboading-tip spacebar-hint">
+            <p><span class="rounded-border">Spacebar</span>&nbsp;&nbsp;will generate a new color.</p>
+          </div>
 
-            <ul class="w-100 center absolute" id="hex-display">
-                <li id="hex-value-display" class="inline bold fc-inherit fs-1 caps ml-1 mr-1"></li>
-            </ul>
+          <div class="onboading-tip leftkey-hint">
+            <p><span class="rounded-border">&larr;</span>&nbsp;&nbsp;to see the previous color.</p>
+          </div>
 
-            <ul class="w-100 center absolute" id="hsl-display">
-                <li id="hue-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
-                <li id="saturation-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
-                <li id="lightness-display" class="inline bold fc-inherit fs-1 ml-1 mr-1"></li>
-            </ul>
+          <div class="onboading-tip rightkey-hint">
+            <p><span class="rounded-border">&rarr;</span>&nbsp;&nbsp;to go forward.</p>
+          </div>
+
+          <div class="mobile-onboading-tip touch-hint">
+            <p>Touch to generate a color.</p>
           </div>
         </div>
 
 
+        <!-- COLOR DISPLAY | FLEX ITEM 1.2 | FLEX CONTAINER 3 -->
+        <div class="display">
+
+          <!-- FLEX ITEM 3.1 -->
+          <div class="display-container">
+
+            <ul id="rgb-display" class="color-display">
+                <li id="red-display"></li>
+                <li id="green-display"></li>
+                <li id="blue-display"></li>
+            </ul>
+
+            <ul id="hex-display" class="color-display">
+                <li id="hex-value-display"></li>
+            </ul>
+
+            <ul id="hsl-display" class="color-display">
+                <li id="hue-display"></li>
+                <li id="saturation-display"></li>
+                <li id="lightness-display"></li>
+            </ul>
+          </div>
+
+        </div>
+
         <!-- COLOR CONTROL BAR | FLEX ITEM 1.3 -->
-        <div class="w-100 f-flex-1">
-          <!-- FLEX CONTAINER 3 -->
-          <div class="fixed bottom-0 w-100 pt-2 pb-1 f f-flow-2 f-jc-1">
+        <div class="controls-container">
 
-            <!-- COLOR DISPLAY MODE SELECTOR | FLEX ITEM 3.1 -->
-            <div class="pl-1 pr-1 f-flex-1">
-
-              <button id="rgb-selector" type="button" class="btn-default btn-selected f-left pt-1 pr-1 pb-1 pl-1">
-                <p class="fs-2">RGB</p>
-              </button>
-
-              <button id="hex-selector" type="button" class="btn-default f-left pt-1 pr-1 pb-1 pl-1">
-                <p class="fs-2">HEX</p>
-              </button>
-
-              <button id="hsl-selector" type="button" class="btn-default f-left pt-1 pr-1 pb-1 pl-1">
-                <p class="fs-2">HSL</p>
-              </button>
-            </div>
-
-            <!-- RGB SLIDERS | FLEX ITEM 3.2 -->
-            <div class="pl-1 pr-1 f-flex-2">
-              <div class="m-0-auto center">
-
-                <div class="pl-1 pr-1 inline-block">
-                  <label for="red-control">Red <span id="red-slider-display"></span></label>
-                  <br>
-                  <input type="range" id="red-control" class="pt-1 pb-1" placeholder="Red" value="255" min="0" max="255" tabindex="0"></input>
-                </div>
-
-                <div class="pl-1 pr-1 inline-block">
-                  <label for="green-control">Green <span id="green-slider-display"></span></label>
-                  <br>
-                  <input type="range" id="green-control" class="pt-1 pb-1" placeholder="Green" value="0" min="0" max="255" tabindex="0"></input>
-                </div>
-
-                <div class="pl-1 pr-1 inline-block">
-                  <label for="blue-control">Blue <span id="blue-slider-display"></span></label>
-                  <br>
-                  <input type="range" id="blue-control" class="pt-1 pb-1" placeholder="Blue" value="255" min="0" max="255" tabindex="0"></input>
-                </div>
-              </div>
-            </div>
-
-          <!-- Copy CSS Button -->
-          <div class="pl-1 pr-1 f-flex-1">
-            <div class="absolute f-right top-0 right-1 opacity-0-animate" role="status">Copied!</div>
-            <button id="copy-css-btn" type="button" class="btn-default pt-1 pr-1 pb-1 pl-1 f-right">
-              <p class="fs-2">Copy CSS</p>
+          <!-- TOGGLE SETTINGS BUTTON FOR SMALLER SCREENS -->
+          <div class="sm-visible">
+            <button id="settings-toggle" type="button">
+              Settings
+              <svg class="settings-icon" viewBox="0 0 66 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+                  <title>arrow</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                      <g id="Group" transform="translate(2.000000, 4.000000)" stroke="#000000" stroke-width="8">
+                          <path d="M25.1133767,15.0857864 L65.2554811,15.0857864" id="Path-3" transform="translate(45.556349, 15.585786) rotate(45.000000) translate(-45.556349, -15.585786) "></path>
+                          <path d="M15.8847763,-4.91421356 L15.8847763,35.2430728" id="Path-4" transform="translate(16.384776, 15.585786) rotate(45.000000) translate(-16.384776, -15.585786) "></path>
+                      </g>
+                  </g>
+              </svg>
+              <!-- <img class="icon" alt="Arrow Icon" src="assets/icons/arrow.svg" /> -->
             </button>
           </div>
 
+          <!-- FLEX CONTAINER 4 -->
+          <div class="settings-container">
+
+            <!-- COLOR DISPLAY MODE SELECTOR | FLEX ITEM 4.1 -->
+            <div class="color-modes-container">
+
+              <button id="rgb" name="0" type="button" class="toggle">
+                <span class="small">RGB</span>
+              </button>
+
+              <button id="hex" name="1" type="button" class="toggle">
+                <span class="small">HEX</span>
+              </button>
+
+              <button id="hsl" name="2" type="button" class="toggle">
+                <span class="small">HSL</span>
+              </button>
+            </div>
+
+            <!-- RGB SLIDERS | FLEX ITEM 4.2 -->
+            <div class="sliders">
+
+              <div class="slider-container">
+                <output class="small" for="red-control">Red <span id="red-slider-display" class="display-readout"></span></output>
+                <br>
+                <input type="range" id="red-control" value="255" min="0" max="255" tabindex="0">
+              </div>
+
+              <div class="slider-container">
+                <output class="small" for="green-control">Green <span class="display-readout" id="green-slider-display"></span></output>
+                <br>
+                <input type="range" id="green-control" value="0" min="0" max="255" tabindex="0">
+              </div>
+
+              <div class="slider-container">
+                <output class="small" for="blue-control">Blue <span class="display-readout" id="blue-slider-display"></span></output>
+                <br>
+                <input type="range" id="blue-control" value="255" min="0" max="255" tabindex="0">
+              </div>
+
+            </div>
+
+            <!-- COPY CSS BUTTON | FLEX ITEM 4.3 -->
+            <div class="copy-container sm-hidden">
+
+              <!-- CONFIRMATION MESSAGE -->
+              <!-- <div class="absolute f-right top-0 right-1 opacity-0 trans-op" role="status">Copied!</div> -->
+              <div class="copy-confirm" role="status">Copied!</div>
+
+              <button id="copy-css-btn" type="button">
+                <span class="small copy-btn-label">Copy CSS</span>
+              </button>
+
+            </div>
+
+          <!-- END SETTINGS -->
+          </div>
+        <!-- END CONTROL BAR -->
         </div>
 
-      <!-- End Page container -->
+      <!-- END UI CONTAINER -->
       </div>
 
-      <!-- Javascript -->
-      <script language="javascript" type="text/javascript" src="js/main.js"></script>
+    <!-- END PAGE CONTAINER -->
+    </div>
 
-    </body>
+    <!-- Javascript -->
+    <script src="js/main.js"></script>
+
+
+  </body>
 </html>
