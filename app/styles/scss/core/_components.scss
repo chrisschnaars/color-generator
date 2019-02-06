@@ -1,0 +1,51 @@
+// COMPONENTS
+
+// ===========================================
+// LINKS
+// ===========================================
+
+a {
+	text-decoration: none;
+	border-bottom: 1px solid;
+  color: inherit;
+}
+
+a:hover {
+	border: none;
+}
+
+// ===========================================
+// BORDERS
+// ===========================================
+
+// ROUNDED BORDERS USED FOR BUTTON-LOOK
+// ON ONBOARDING TIPS
+.rounded-border {
+  // LAYOUT
+  @include padding(0.5rem, 1rem, 0.5rem, 1rem);
+  @include border-radius(0.5rem);
+  border: 1px solid;
+}
+
+// ===========================================
+// LISTS
+// ===========================================
+
+// COLOR DISPLAY LIST
+ul.color-display {
+  // APPEARANCE
+  display: none;
+	text-transform: uppercase;
+  li {
+    // LAYOUT
+    display: inline;
+    // APPEARANCE
+    @extend .display;
+  }
+}
+
+// STYLE FOR ACTIVE MODE DISPLAY
+ul.active-display {
+  // APPEARANCE
+  display: block;
+}

@@ -8,114 +8,68 @@
 
     <!-- TITLE AND DESCRIPTION  -->
     <title>Color Generator</title>
-    <meta name="description" content="A tool to help you find your next favorite color.">
+    <meta name="description" content="Perhaps the easiest way in the world to find your next favorite color.">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./dist/styles/styles.min.css">
 
-    <!-- Javascript Files -->
-    <script src="js/color-generation.js"></script>
-    <script src="js/color-array.js"></script>
-    <script src="js/color-contrast.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/mobile-behavior.js"></script>
-    <script src="js/interaction.js"></script>
-    <script src="js/mode-selector.js"></script>
-    <script src="js/onboarding.js"></script>
-    <script src="js/copy-btn.js"></script>
-
-    <!-- Clipboard JS -->
-    <script src="js/libs/clipboard.js-master/dist/clipboard.min.js"></script>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 
   </head>
 
-
   <body>
-
+    <!-- FULL PAGE CONTAINER -->
     <div class="page-container">
 
-      <!-- FULL PAGE BACKGROUND | FLEX CONTAINER 1 -->
+      <!-- UI ELEMENT CONTAINER | FLEX CONTAINER 1 -->
       <div class="ui-container">
 
-        <!-- FLEX ITEM 1.1  -->
-        <header>
-
-          <!-- | FLEX CONTAINER 2 -->
-          <div class="meta-container">
-
-            <!-- SITE TITLE | FLEX ITEM 2.1 -->
-            <div class="logo-container">
-              <h1>Color Generator</h1>
-            </div>
-
-            <!-- GITHUB LINK | FLEX ITEM 2.3 -->
-            <div id="help-btn" class="info-container">
-              <p>
-                <a href="https://github.com/chrisschnaars/color-generator">Info</a>
-              </p>
-            </div>
+        <!-- TOP BAR -->
+        <div class="top-bar">
+          <!-- SITE TITLE -->
+          <div class="header-item-sm">
+            <h1 class="logo">Color Generator</h1>
           </div>
 
-        </header>
-
-        <!-- ONBOARDING TIPS | FLEX ITEM 2.2 -->
-        <div class="onboarding-container">
-
-          <div class="onboading-tip spacebar-hint">
-            <p><span class="rounded-border">Spacebar</span>&nbsp;&nbsp;will generate a new color.</p>
-          </div>
-
-          <div class="onboading-tip leftkey-hint">
-            <p><span class="rounded-border">&larr;</span>&nbsp;&nbsp;to see the previous color.</p>
-          </div>
-
-          <div class="onboading-tip rightkey-hint">
-            <p><span class="rounded-border">&rarr;</span>&nbsp;&nbsp;to go forward.</p>
-          </div>
-
-          <div class="mobile-onboading-tip touch-hint">
-            <p>Touch to generate a color.</p>
+          <!-- INFO LINK -->
+          <div id="help-btn" class="header-item-sm">
+            <p id="about-modal-open" class="ui float-right">
+              <a href="#">Info</a>
+            </p>
           </div>
         </div>
 
-
-        <!-- COLOR DISPLAY | FLEX ITEM 1.2 | FLEX CONTAINER 3 -->
+        <!-- COLOR DISPLAY -->
         <div class="display">
-
-          <!-- FLEX ITEM 3.1 -->
-          <div class="display-container">
-
-            <ul id="rgb-display" class="color-display">
-                <li id="red-display"></li>
-                <li id="green-display"></li>
-                <li id="blue-display"></li>
-            </ul>
-
-            <ul id="hex-display" class="color-display">
-                <li id="hex-value-display"></li>
-            </ul>
-
-            <ul id="hsl-display" class="color-display">
-                <li id="hue-display"></li>
-                <li id="saturation-display"></li>
-                <li id="lightness-display"></li>
-            </ul>
-          </div>
-
+          <!-- rgb display -->
+          <ul id="rgb-display" class="color-display">
+              <li id="red-display"></li>
+              <li id="green-display"></li>
+              <li id="blue-display"></li>
+          </ul>
+          <!-- hexidecimal display -->
+          <ul id="hex-display" class="color-display">
+              <li id="hex-value-display"></li>
+          </ul>
+          <!-- hsl display -->
+          <ul id="hsl-display" class="color-display">
+              <li id="hue-display"></li>
+              <li id="saturation-display"></li>
+              <li id="lightness-display"></li>
+          </ul>
         </div>
 
-        <!-- COLOR CONTROL BAR | FLEX ITEM 1.3 -->
+        <!-- COLOR CONTROL BAR  -->
         <div class="controls-container">
 
           <!-- TOGGLE SETTINGS BUTTON FOR SMALLER SCREENS -->
           <div class="sm-visible">
-            <button id="settings-toggle" type="button">
+            <button id="settings-toggle" type="button" name="settings panel toggle" aria-label="Open Settings Panel">
               Settings
               <svg class="settings-icon" viewBox="0 0 66 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                   <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
                   <title>arrow</title>
-                  <desc>Created with Sketch.</desc>
-                  <defs></defs>
                   <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
                       <g id="Group" transform="translate(2.000000, 4.000000)" stroke="#000000" stroke-width="8">
                           <path d="M25.1133767,15.0857864 L65.2554811,15.0857864" id="Path-3" transform="translate(45.556349, 15.585786) rotate(45.000000) translate(-45.556349, -15.585786) "></path>
@@ -131,53 +85,53 @@
           <div class="settings-container">
 
             <!-- COLOR DISPLAY MODE SELECTOR | FLEX ITEM 4.1 -->
-            <div class="color-modes-container">
-
-              <button id="rgb" name="0" type="button" class="toggle">
-                <span class="small">RGB</span>
+            <div class="control-container color-modes-container toggle-group">
+              <button id="rgb" type="button" class="toggle" name="RGB" aria-label="View RGB Values" aria-pressed="true">
+                RGB
               </button>
 
-              <button id="hex" name="1" type="button" class="toggle">
-                <span class="small">HEX</span>
+              <button id="hex" type="button" class="toggle" name="Hex" aria-label="View Hex Code" aria-pressed="false">
+                HEX
               </button>
 
-              <button id="hsl" name="2" type="button" class="toggle">
-                <span class="small">HSL</span>
+              <button id="hsl" type="button" class="toggle" name="HSL" aria-label="View HSL Values" aria-pressed="false">
+                HSL
               </button>
             </div>
 
             <!-- RGB SLIDERS | FLEX ITEM 4.2 -->
-            <div class="sliders">
+            <div class="control-container sliders">
 
               <div class="slider-container">
-                <output class="small" for="red-control">Red <span id="red-slider-display" class="display-readout"></span></output>
-                <br>
-                <input type="range" id="red-control" value="255" min="0" max="255" tabindex="0">
+                <div class="slider-info-container">
+                  <label id="red-control-label" for="red-control">Red</label>
+                  <p id="red-slider-display" class="ui"></p>
+                </div>
+                <input type="range" id="red-control" min="0" max="255" value="255" aria-labelledby="red-control-label" aria-valuemin="0" aria-valuemax="255" aria-valuenow="255">
               </div>
 
               <div class="slider-container">
-                <output class="small" for="green-control">Green <span class="display-readout" id="green-slider-display"></span></output>
-                <br>
-                <input type="range" id="green-control" value="0" min="0" max="255" tabindex="0">
+                <div class="slider-info-container">
+                  <label id="green-control-label" for="green-control">Green</label>
+                  <p id="green-slider-display" class="ui"></p>
+                </div>
+                <input type="range" id="green-control" min="0" max="255" value="0" aria-labelledby="green-control-label" aria-valuemin="0" aria-valuemax="255" aria-valuenow="0">
               </div>
 
               <div class="slider-container">
-                <output class="small" for="blue-control">Blue <span class="display-readout" id="blue-slider-display"></span></output>
-                <br>
-                <input type="range" id="blue-control" value="255" min="0" max="255" tabindex="0">
+                <div class="slider-info-container">
+                  <label id="blue-control-label" for="blue-control">Blue</label>
+                  <p id="blue-slider-display" class="ui"></p>
+                </div>
+                <input type="range" id="blue-control" min="0" max="255" value="255" aria-labelledby="blue-control-label" aria-valuemin="0" aria-valuemax="255" aria-valuenow="255">
               </div>
 
             </div>
 
             <!-- COPY CSS BUTTON | FLEX ITEM 4.3 -->
-            <div class="copy-container sm-hidden">
-
-              <!-- CONFIRMATION MESSAGE -->
-              <!-- <div class="absolute f-right top-0 right-1 opacity-0 trans-op" role="status">Copied!</div> -->
-              <div class="copy-confirm" role="status">Copied!</div>
-
-              <button id="copy-css-btn" type="button">
-                <span class="small copy-btn-label">Copy CSS</span>
+            <div class="control-container copy-container sm-hidden">
+              <button id="copy-css-btn" type="button" name="Copy CSS" aria-label="Copy CSS">
+                <span class="copy-btn-label">Copy CSS</span>
               </button>
 
             </div>
@@ -190,11 +144,32 @@
       <!-- END UI CONTAINER -->
       </div>
 
+      <!-- ABOUT MODAL  -->
+      <div id="about-modal" class="modal">
+        <button id="about-modal-close" class="close-btn" type="button" name="Close">
+        </button>
+
+        <div class="modal-content">
+          <!-- TITLE -->
+          <div class="content-section">
+            <h1>Color Generator</h1>
+          </div>
+
+          <!-- HOW TO PLAY -->
+          <div class="content-section">
+            <p>Perhaps the easiest way to find your next favorite color.</p>
+
+            <p>Press the <span class="heavy">spacebar</span> or <span class="heavy">tap</span> to create a new color. The <span class="heavy">back key</span> will take you through your color history. The  <span class="heavy">forward key</span> will go the other way.</p>
+
+            <p>Built by Chris Schnaars. Find the code on <a href="https://github.com/chrisschnaars/color-generator">Github</a>.</p>
+          </div>
+      </div>
+
     <!-- END PAGE CONTAINER -->
     </div>
 
     <!-- Javascript -->
-    <script src="js/main.js"></script>
+    <script src="dist/scripts/app.min.js"></script>
 
 
   </body>

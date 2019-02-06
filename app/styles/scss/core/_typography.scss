@@ -1,0 +1,77 @@
+// TYPOGRAPHY
+// ALL BASE TYPE SETTINGS
+
+
+// ===========================================
+// HEADERS
+// ===========================================
+
+// SITE TITLE
+h1 {
+  // APPEARANCE
+  font-family: $gotham-bold;
+  font-size: $headline-size-lg;
+  line-height: $headline-line-height;
+  color: inherit;
+  // RESPONSIVE
+  @include media-query($bp-64) {
+    font-size: $headline-size-sm;
+  }
+}
+
+// SITE LOGO ID
+h1.logo {
+  // APPEARANCE
+  font-family: $gotham-book;
+  font-size: $ui-font-size-lg;
+  line-height: $ui-line-height;
+  letter-spacing: $wide-letter-spacing;
+  text-transform: uppercase;
+
+}
+
+// BODY COPY
+p {
+  // LAYOUT
+  margin-bottom: 2rem;
+  // APPEARANCE
+  color: inherit;
+  font-family: $gotham-book;
+  font-size: $content-font-size-lg;
+  line-height: $content-line-height;
+  // RESPONSIVE
+  @include media-query($bp-64) {
+    font-size: $content-font-size-sm;
+  }
+}
+
+// 14/20 FOR LABELS AND BUTTON TEXT
+p.ui, label {
+  // LAYOUT
+  margin-bottom: 0;
+  // APPEARANCE
+  font-family: $gotham-book;
+  font-size: $ui-font-size-lg;
+  line-height: $ui-line-height;
+}
+
+// COLOR DISPLAY
+.display {
+  // APPEARANCE
+  font-family: $gotham-bold;
+  font-size: $dispaly-font-size-lg;
+  line-height: $display-line-height;
+  color: inherit;
+  // RESPONSIVE
+  @include media-query($bp-64) {
+    font-size: $display-font-size-md;
+  }
+  @include media-query($bp-48) {
+    font-size: $display-font-size-sm;
+  }
+}
+
+// GLOBAL HEAVY CLASS
+.heavy {
+  font-family: $gotham-bold;
+}

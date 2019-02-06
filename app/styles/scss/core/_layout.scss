@@ -1,0 +1,216 @@
+// LAYOUT
+
+// ===========================================
+// SITE CONTAINERS
+// ===========================================
+
+// FULL WIDTH AND HEIGHT CONTAINER
+// THIS IS WHAT CHANGES COLOR
+.page-container {
+  // LAYOUT
+  @include full-width;
+  @include transition(background-color $animate-time-slow linear);
+}
+
+// CONTAINER FOR ALL UI ELEMENTS
+.ui-container {
+  // LAYOT
+  @include full-width;
+  height: 100vh;
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  @include justify-content(space-between);
+}
+
+
+// ===========================================
+// TOP BAR
+// ===========================================
+
+div.top-bar {
+  // LAYOUT
+  width: 100%;
+  @include padding(2rem, 2rem, 2rem, 2rem);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(space-between);
+  // RESPONSIVE
+  @include media-query($bp-32) {
+    // REDUCE PADDING
+    @include padding(1.5rem, 1.5rem, 1.5rem, 1.5rem);
+  }
+}
+
+
+
+// HIDDEN ONBOARDING CLASS
+p.tip-hidden {
+  // APPEARANCE
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  // TRANSITIONS
+  @include transition(all $animate-time-slow ease-in-out);
+}
+// VISIBLE ONBOARDING CLASS
+p.tip-visible {
+  // APPEARANCE
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  // TRANSITIONS
+  @include transition(all $animate-time-slow ease-in-out);
+}
+
+// ===========================================
+// COLOR DISPLAY
+// ===========================================
+
+// MAIN CONTAINER FOR COLOR DISPLAY
+div.display {
+  // LAYOUT
+  @include full-width;
+  @include padding(1rem, 2rem, 2rem, 2rem);
+  // FLEX ITEM STYLES
+  @include flex(1);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(column nowrap);
+  @include justify-content(center);
+  @include align-items(center);
+  // RESPONSIVE
+  @include media-query($bp-32) {
+    // REDUCE PADDING
+    @include padding(1.5rem, 1.5rem, 1.5rem, 1.5rem);
+  }
+}
+
+// ===========================================
+// CONTROL BAR
+// ===========================================
+
+// CONTAINER FOR ALL CONTROL BAR ELEMENTS
+div.controls-container {
+  // LAYOUT
+  @include full-width;
+}
+
+// CONTAINER FOR ALL CONTROLS ON LARGER SCREENS / MOBILE PANEL
+div.settings-container {
+  // LAYOUT
+  @include full-width;
+  @include padding(1.75rem, 2rem, 2rem, 2rem);
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(space-between);
+
+  // RESPONSIVE
+  @include media-query($bp-48) {
+    @include flex-flow(row wrap);
+  }
+
+  @include media-query($bp-32) {
+    background-color: var(--button-color-default);
+    display: none;
+    @include padding(1.5rem, 1.5rem, 1.5rem, 1.5rem);
+  }
+}
+
+// CONTAINER FOR SINGLE CONTROL
+div.control-container {
+  // LAYOUT
+  // padding-right: 2rem;
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+// COLOR MODES & COPY BUTTON CONTAINERS
+div.color-modes-container {
+  // LAYOUT
+  @include media-query($bp-32) {
+    @include flex(1 0 auto);
+  }
+}
+
+// CONTAINER FOR ALL SLIDERS
+div.sliders {
+  // FLEX CONTAINER STYLES
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(center);
+  // RESPONSIVE
+  @include media-query($bp-48) {
+    @include flex (1 0 100%);
+    @include order(-1);
+    padding-bottom: 2rem;
+    @include justify-content(space-between);
+  }
+}
+
+// CONTAINER FOR EACH INDIVIDUAL SLIDER
+div.slider-container {
+  // LAYOUT
+  width: 100%;
+  padding-right: 1.5rem;
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+// CONTAINER FOR EACH SLIDER LABEL AND READOUT
+div.slider-info-container {
+  // LAYOUT
+  @include flexbox;
+  @include flex-flow(row nowrap);
+  @include justify-content(space-between);
+  margin-bottom: 0.5rem;
+}
+
+/**************************************
+ABOUT MODAL
+**************************************/
+
+// FULL SCREEN MODAL STYLE
+.modal {
+  // LAYOUT
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  // APPEARANCE
+  background-color: $white;
+  display: none;
+  // overflow: auto;
+  z-index: 100;
+  opacity: 0;
+  // BEHAVIOR
+  pointer-events: none;
+}
+
+// OPEN MODAL
+.modal.visible {
+  // APPEARANCE
+  opacity: 0.98;
+  display: block;
+  // BEHAVIOR
+  pointer-events: auto;
+}
+
+// ABOUT CONTENT CONTAINER
+.modal-content {
+  // LAYOUT
+  margin: 0 auto;
+  @include padding(3rem, 2rem, 2rem, 2rem);
+  width: 100%;
+  max-width: 700px;
+}
+
+// CONTAINER FOR EACH CONTENT SECTION
+.content-section {
+  margin-bottom: 2rem;
+}
