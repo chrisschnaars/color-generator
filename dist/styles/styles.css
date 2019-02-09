@@ -728,6 +728,8 @@ div.toggle-group {
   -ms-flex-pack: flex-start; }
 
 button.toggle {
+  padding-left: 1rem;
+  padding-right: 1rem;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -webkit-flex: 1;

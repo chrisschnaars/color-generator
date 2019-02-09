@@ -60,6 +60,9 @@ div.toggle-group {
 
 // TOGGLE BUTTON MODIFICATION
 button.toggle {
+	// LAYOUT
+	padding-left: 1rem;
+	padding-right: 1rem;
   // FLEX ITEM STYLES
   @include flex(1);
 }
@@ -69,9 +72,6 @@ button.toggle {
 .btn-selected {
 	background-color: var(--button-color-hover);
 }
-
-
-
 
 // ===========================================
 // SLIDERS
