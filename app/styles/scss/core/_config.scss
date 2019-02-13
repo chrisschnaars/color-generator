@@ -18,17 +18,19 @@ $spacing-unit:          0.5rem !default;  // 8px grid increments
 /* GOTHAM BOOK */
 @font-face {
   font-family: 'gotham-book';
-  src: url("../assets/fonts/gotham/gotham-book.woff") format("woff");
+  src: url("../assets/fonts/gotham-book.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  text-rendering: optimizeLegibility;
 }
 
 /* GOTHAM BOLD */
 @font-face {
   font-family: 'gotham-bold';
-  src: url("../assets/fonts/gotham/gotham-medium.woff") format("woff");
+  src: url("../assets/fonts/gotham-medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  text-rendering: optimizeLegibility;
 }
 
 // ===========================================
